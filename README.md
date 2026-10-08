@@ -1,34 +1,37 @@
-# 倒立摆 / 小车摆控制仿真（复试准备）
+# 两轮自平衡小车 · 学习项目（复试准备）
 
-面向准备**东南大学（SEU）控制相关方向研究生复试**的本科同学：用 Python 从零搭建**倒立摆（cart-pole）控制仿真**，逐步掌握 **PID → 状态空间与 LQR → 观测器** 等经典内容，最终在面试中能清晰讲解模型、控制器设计与仿真结果。
+面向准备 **东南大学 085400 电子信息（专硕）** 复试的本科同学（机器人 / 自动化背景）：以 **两轮自平衡小车** 为最终目标 — **先在 MuJoCo 中仿真，再制作实物** — 分阶段掌握 Python、建模、经典与现代控制，并可选衔接 **具身智能** 方向的学习控制实验。
 
-> **当前进度**：**Week 1 — Python 基础与环境搭建**。  
-> 高级控制（真实倒立摆动力学、PID/LQR 闭环、动画演示）**尚未实现**，仅保留 `src/inverted_pendulum/` 下的包骨架供后续周次填充。
+**当前阶段仍从「倒立摆（cart-pole）」入手**：倒立摆是平衡车在数学上的经典等效模型（轮轴支点、小角度近似等），便于在大三上打好 **拉格朗日建模、线性化、PID** 基础，再平滑过渡到仿真小车与硬件。
+
+> **当前进度**：**Week 1 — Python 基础与环境搭建**（`weeks/week01/`）。  
+> 倒立摆动力学闭环、MuJoCo、LQR 实物、强化学习等 **均未实现**；`src/inverted_pendulum/` 仅为包骨架，`sim/mujoco/` 为寒假阶段占位。
 
 ---
 
-## 项目目标
+## 项目目标（升级后）
 
-| 阶段 | 目标 |
+| 维度 | 说明 |
 |------|------|
-| 复试展示 | 可运行的仿真：平衡倒立摆、对比不同控制策略、能画状态曲线 |
-| 知识串联 | 经典控制（PID）与现代控制（LQR、全状态反馈）与「能写进 PPT 的推导」 |
-| 工程能力 | Python + numpy/scipy/matplotlib，代码可读、可复现 |
+| **最终系统** | 两轮自平衡小车：MuJoCo 仿真 → ESP32/STM32 实物（IMU + 编码器电机） |
+| **复试展示** | 能讲清：建模 → PID → LQR → 仿真 → 实物对比 →（可选）学习控制 |
+| **工程习惯** | 先仿真后硬件；MCU 实时控制（&lt;1 ms 级）、主机负责仿真/调参/学习 |
+| **当前落地** | 完成 Week 1 练习；按周次推进倒立摆 Python 仿真（见下表） |
+
+更完整的分阶段里程碑、复试 PPT 结构与暂定硬件 BOM 见 **[`docs/ROADMAP.md`](docs/ROADMAP.md)**。
 
 ---
 
-## 技术栈
+## 学习路线概览（按学期）
 
-- **语言**：Python 3.10+
-- **数值与科学计算**：`numpy`、`scipy`
-- **绘图**：`matplotlib`
-- **后续（约 Week 3–4）**：`python-control`（传递函数、状态空间、LQR 设计）
+| 时间 | 阶段 | 重点 | 本仓库 |
+|------|------|------|--------|
+| **大三上**（2026.10 — 2027.01） | 倒立摆基础 | Python、拉格朗日建模、线性化、PID；理解「摆 ≈ 平衡车模型」 | `weeks/week01/` 起，填充 `src/inverted_pendulum/` |
+| **寒假**（2027.01 — 2027.02） | MuJoCo 仿真 | MJCF 两轮平衡车、**LQR** 平衡控制 | 计划使用 [`sim/mujoco/`](sim/mujoco/)（占位）；**暂不**在 `requirements.txt` 加入 mujoco |
+| **大三下**（2027.03 — 2027.06） | 实物硬件 | ESP32/STM32（**C**）、IMU + 电机，移植 PID/LQR，仿真 vs 实物 | 文档与笔记为主；代码可另建 `firmware/` 等（后续） |
+| **2027 暑假前** | 学习控制 | MuJoCo 中简单 **RL** 平衡实验，与 LQR 对比，衔接具身智能 | 文档规划见 ROADMAP；实现放在寒假/下学期之后 |
 
-依赖版本见 [`requirements.txt`](requirements.txt)。
-
----
-
-## 学习路径概览（建议 6–8 周）
+### 大三上 · 周次安排（与倒立摆脚手架对齐）
 
 | 周次 | 主题 | 本仓库内容 |
 |------|------|------------|
@@ -36,11 +39,22 @@
 | Week 2 | numpy、向量、简单 ODE 数值解 | （待添加） |
 | Week 3 | 传递函数、框图、PID 概念与整定入门 | 骨架 → `controllers/pid.py` |
 | Week 4 | 状态空间、线性化倒立摆模型 | 骨架 → `model.py` |
-| Week 5 | LQR 设计、闭环仿真 | `controllers/lqr.py`、`simulation.py` |
-| Week 6 | 观测器 / 输出反馈、噪声与鲁棒性讨论 | 扩展模块 |
-| Week 7–8 | 动画、参数扫掠、复试答辩材料整理 | `plotting.py`、文档与图表 |
+| Week 5 | LQR 设计、闭环仿真（Python） | `controllers/lqr.py`、`simulation.py` |
+| Week 6+ | 观测器、动画、参数扫掠、整理推导笔记 | `plotting.py`、文档与图表 |
 
 每周目录计划包含：练习脚本、中文注释、`CHECKLIST.md` 自查清单。
+
+---
+
+## 技术栈
+
+- **语言**：Python 3.10+（大三上仿真）；实物阶段 MCU 使用 **C**
+- **数值与科学计算**：`numpy`、`scipy`
+- **绘图**：`matplotlib`
+- **后续（约 Week 3–5）**：`python-control`（传递函数、状态空间、LQR 设计）
+- **寒假起（主机）**：MuJoCo（安装与版本见 `docs/ROADMAP.md`，**尚未**列入 `requirements.txt`）
+
+依赖版本见 [`requirements.txt`](requirements.txt)。
 
 ---
 
@@ -99,7 +113,11 @@ python weeks/week01/hello_sim.py
 ```text
 .
 ├── README.md                 # 本文件
-├── requirements.txt        # Python 依赖（固定版本）
+├── docs/
+│   └── ROADMAP.md            # 分阶段路线图、复试 PPT、暂定 BOM
+├── requirements.txt          # Python 依赖（固定版本）
+├── sim/
+│   └── mujoco/               # 寒假 MuJoCo 占位（见目录内 README）
 ├── weeks/
 │   └── week01/               # 第一周教材与练习
 │       ├── CHECKLIST.md
@@ -108,7 +126,7 @@ python weeks/week01/hello_sim.py
 │       ├── ex03_lists_dicts.py
 │       └── hello_sim.py
 └── src/
-    └── inverted_pendulum/    # 仿真包骨架（后续实现）
+    └── inverted_pendulum/    # 倒立摆仿真包骨架（大三上逐步实现）
         ├── model.py
         ├── simulation.py
         ├── plotting.py
@@ -121,6 +139,6 @@ python weeks/week01/hello_sim.py
 
 ## 许可与说明
 
-本项目为**学习用途**的教学脚手架；物理参数与控制器参数在后续周次会给出推荐取值与参考文献（如经典 cart-pole 方程、MATLAB/`python-control` 文档）。
+本项目为**学习用途**的教学脚手架；物理参数与控制器参数在后续周次会给出推荐取值与参考文献（如经典 cart-pole 方程、平衡车简化模型、MuJoCo / `python-control` 文档）。
 
 祝复试顺利。
