@@ -6,7 +6,7 @@
 ## 环境
 
 - [ ] Python 3.10+、虚拟环境、`pip install -r requirements.txt`
-- [ ] 教程入口：[`TUTORIAL.md`](TUTORIAL.md) → **T00–T02**
+- [ ] 教程：**T00–T02**（[`weeks/README.md`](../README.md) · [`docs/tutorials/`](../../docs/tutorials/README.md)）；可选 **T01b**
 
 ## 脚本（`weeks/week01/`）
 

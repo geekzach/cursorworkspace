@@ -2,7 +2,7 @@
 
 **完整教程序列只在本目录**（`docs/tutorials/`）。  
 **本周打卡**（读哪几章、每日单词、每周听力固定槽）→ [`docs/checklists/`](../checklists/)（如 [`2026-W42.md`](../checklists/2026-W42.md)）。  
-**跑代码** → `weeks/week01/`、`weeks/ai01/` + `src/`；`weeks/*/TUTORIAL.md` 仅为链接入口。
+**跑代码** → [`weeks/README.md`](../../weeks/README.md)（`week01/`、`ai01/`）+ `src/`。
 
 ---
 
@@ -90,7 +90,7 @@ Python / NumPy（T01–T02）
 
 ## 仓库分工
 
-完整目录树见根目录 [`README.md` §仓库结构](../../README.md#repo-tree)。本教程对应练习入口：[`weeks/week01/TUTORIAL.md`](../../weeks/week01/TUTORIAL.md) · [`weeks/ai01/TUTORIAL.md`](../../weeks/ai01/TUTORIAL.md)
+仓库入口见根目录 [`README.md`](../../README.md)；练习脚本索引 [`weeks/README.md`](../../weeks/README.md)。
 
 ---
 

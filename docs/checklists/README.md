@@ -16,4 +16,4 @@
 | [`2026-W42.md`](2026-W42.md) … [`2027-W04.md`](2027-W04.md) | 当周打卡（W42 为详表范例，其余多为简版 stub，可抄 W42 扩写） |
 | [`ai01-focus.md`](ai01-focus.md) | AI01 支线：仅 **T03 + T05** 与脚本指针 |
 
-脚本自查（短清单）：`weeks/week01/CHECKLIST.md`、`weeks/ai01/CHECKLIST.md`。
+练习脚本总索引：[`weeks/README.md`](../../weeks/README.md)。脚本自查（短清单）：`weeks/week01/CHECKLIST.md`、`weeks/ai01/CHECKLIST.md`。
