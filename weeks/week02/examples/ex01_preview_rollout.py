@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 """
-AI01 预习：用「真实」摆 ODE 生成一条 rollout 并画图。
+Week 2 示例：用简化摆 ODE 生成一条 rollout 并画图。
 
 不训练神经网络，只熟悉：状态是什么、力矩 u 如何驱动系统变化。
 
 运行（项目根目录）：
-    export PYTHONPATH="$(pwd)/src"
-    python weeks/ai01/ex01_preview_rollout.py
+    python weeks/week02/examples/ex01_preview_rollout.py
 """
 
 from __future__ import annotations
@@ -15,7 +14,7 @@ import os
 import sys
 
 # 允许未设置 PYTHONPATH 时从仓库根目录运行
-_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
 _SRC = os.path.join(_ROOT, "src")
 if _SRC not in sys.path:
     sys.path.insert(0, _SRC)

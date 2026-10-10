@@ -1,38 +1,31 @@
 # 两轮自平衡小车 · 学习项目（复试准备）
 
-面向准备 **东南大学 085400 电子信息（专硕）** 的本科同学：以 **两轮自平衡小车** 为最终目标（**先 MuJoCo 仿真、再实物**），从 **倒立摆（cart-pole）** 打好 Python、建模与经典控制基础；可选 **AI01** 支线（NumPy MLP 拟合一步动力学，**非 RL**）。
+面向准备 **东南大学 085400 电子信息（专硕）** 的本科同学：以 **两轮自平衡小车** 为最终目标（**先 MuJoCo 仿真、再实物**），从 **倒立摆（cart-pole）** 打好 Python、建模与经典控制基础；**本学期** ML 按 **[T05](docs/tutorials/T05-AI01-神经网络拟合动力学.md)** 自学李航《统计学习方法》，**寒假**再写 `weeks/ai01/` 代码。
 
 ## 三个入口
 
 | 去哪 | 链接 | 说明 |
 |------|------|------|
-| **学教程** | [`docs/tutorials/`](docs/tutorials/README.md) | 中文讲义 **T00–T06**、**T01b**；思路核对 [`answers/`](docs/tutorials/answers/) |
-| **本周打卡** | [`docs/checklists/`](docs/checklists/) | [`SEMESTER_PLAN.md`](docs/checklists/SEMESTER_PLAN.md)（2026-W42 起）· 当周 `YYYY-Www.md`（课表、CET-6、复盘） |
-| **跑代码** | [`weeks/`](weeks/README.md) · [`src/`](src/) | 按周练习（现 **`week01`**、`week02` 占位、`ai01`）；库 [`inverted_pendulum/`](src/inverted_pendulum/) · [`ai01/`](src/ai01/) |
+| **学教程** | [`docs/tutorials/`](docs/tutorials/README.md) | 目标 / 书目 / 要点（**无长代码**） |
+| **本周打卡** | [`docs/checklists/`](docs/checklists/) | [`SEMESTER_PLAN.md`](docs/checklists/SEMESTER_PLAN.md) · 当周 `YYYY-MM-DD.md` |
+| **跑代码** | [`weeks/`](weeks/README.md) · [`src/`](src/) | `examples` → `exercises` → `answers` |
 
-**路线图** [`docs/ROADMAP.md`](docs/ROADMAP.md) · **周日 20:30** 打开当周校历文件复盘。
+**路线图** [`docs/ROADMAP.md`](docs/ROADMAP.md) · **周日 20:30** 复盘。
 
-> **仓库进度（2026-10）**：**Week 1** 练习可用；**Week 2** 目录占位（脚本待补）；`src/inverted_pendulum/` 为骨架；MuJoCo / LQR 实物 / RL **尚未实现**（见 ROADMAP）。
+> **仓库进度（2026-10）**：`week01` / `week02` 示例可用；`src/inverted_pendulum/` 骨架；MuJoCo / LQR / RL 未实现。
 
 ---
 
 ## 环境（最短）
 
-在项目**根目录**：
-
 ```bash
 python3 -m venv .venv
-source .venv/bin/activate          # Windows: .venv\Scripts\Activate.ps1
+source .venv/bin/activate
 pip install -U pip && pip install -r requirements.txt
+python weeks/week01/exercises/ex01_syntax.py
 ```
 
-导入 `inverted_pendulum` / `ai01` 时：
-
-```bash
-export PYTHONPATH="${PYTHONPATH}:$(pwd)/src"
-```
-
-VS Code + WSL、conda 等等价步骤见 **[T00 §0.3](docs/tutorials/T00-导读与环境.md#env-setup)**。跑脚本与周目录说明见 **[`weeks/README.md`](weeks/README.md)**。
+`src` 包：`export PYTHONPATH="${PYTHONPATH}:$(pwd)/src"`。详见 **[T00 §0.3](docs/tutorials/T00-导读与环境.md#env-setup)**。
 
 ---
 

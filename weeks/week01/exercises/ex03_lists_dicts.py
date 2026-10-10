@@ -2,7 +2,7 @@
 """
 Week 1 练习 3：列表与字典
 
-运行：python weeks/week01/ex03_lists_dicts.py
+运行：python weeks/week01/exercises/ex03_lists_dicts.py
 
 学习目标：用列表存时间序列、用字典存物理参数（后续建模会大量使用）。
 """
