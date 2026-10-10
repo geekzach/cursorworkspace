@@ -5,7 +5,7 @@
 ## 环境
 
 - [ ] 已能运行 `weeks/week01/` 下脚本（说明 numpy / matplotlib 可用）
-- [ ] 已设置 `export PYTHONPATH="$(pwd)/src"`（或在 IDE 把 `src` 标为源码根）
+- [ ] 能运行 `ex01`（脚本会自动加入 `src`；REPL 里需 `export PYTHONPATH="$(pwd)/src"`）
 - [ ] 成功运行 `ex01_preview_rollout.py` 并看到/保存轨迹图
 
 ## 概念（能用自己的话说明）

@@ -13,7 +13,8 @@
 | [`WEEKLY_TEMPLATE.md`](WEEKLY_TEMPLATE.md) | 复制为 `YYYY-Www.md`；每日 **单词** + 顶部 **听力固定槽 ×2–3** |
 | [`CURRICULUM.md`](CURRICULUM.md) | 大纲 Week 1–5 / AI01 与 **T00–T06** 对照 |
 | [`2026-W41.md`](2026-W41.md) | **已结束**（归档） |
-| [`2026-W42.md`](2026-W42.md) … [`2027-W04.md`](2027-W04.md) | 当周打卡（W42 为详表范例，其余多为简版 stub，可抄 W42 扩写） |
+| [`2026-W42.md`](2026-W42.md) … [`2027-W04.md`](2027-W04.md) | 当周打卡（W42 为课表详表；其余为当周焦点卡） |
+| [`2026-W53.md`](2026-W53.md) | 跨年周（12-28 — 01-03） |
 | [`ai01-focus.md`](ai01-focus.md) | AI01 支线：仅 **T03 + T05** 与脚本指针 |
 
 练习脚本总索引：[`weeks/README.md`](../../weeks/README.md)。脚本自查（短清单）：`weeks/week01/CHECKLIST.md`、`weeks/ai01/CHECKLIST.md`。

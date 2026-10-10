@@ -1,24 +1,27 @@
-# 02 NumPy / Matplotlib · 参考思路
+# 02 NumPy / Matplotlib · 参考思路（T02）
 
-## 必做 2（τ 与 63%）
+## 自测（T02 §2.19）
 
-一阶系统约在 \(t=\tau\) 时输出达到 \(0.632 \times K\)（对 \(K=1\) 即约 0.632）。  
-τ=0.2 时更快接近稳态；τ=1.0 更慢。
+1. `(5,)` 是一维向量；`(5, 1)` 是列矩阵。`A @ x` 时形状要对齐。  
+2. `A @ x` 是矩阵乘（状态方程）；`A * x` 是逐元素，物理意义通常错。  
+3. \(\tau\) **变大**，阶跃响应 **变慢**。  
+4. 无显示器：`plt.savefig`（`hello_sim.py` 在 Agg / 无 `DISPLAY` 时会保存 PNG）。  
+5. 固定 seed 是为了对比「改代码前后」是否变好，不是造假。
 
-## 必做 3（sin 曲线）
+## \(\tau\) 与 63%
 
-```python
-import numpy as np
-import matplotlib.pyplot as plt
+\(t=\tau\) 时 \(y=K(1-e^{-1})\approx 0.632K\)。  
+`tau=0.2` 更快接近稳态；`tau=1.0` 更慢。`1-np.exp(-1)` 可验证。
 
-theta = np.linspace(0, 2 * np.pi, 100)
-plt.plot(theta, np.sin(theta))
-plt.xlabel("theta (rad)")
-plt.ylabel("sin(theta)")
-plt.grid(True, alpha=0.3)
-plt.savefig("my_sin.png", dpi=120)
-```
+## 广播（§2.8）
 
-## 选做 2（随机数）
+`(3,1)+(4,)` **合法**，结果 `(3,4)`。  
+`(3,2)+(4,)` **报错**（尾维 2 与 4 不兼容）。
 
-`rng.uniform(-1, 1, size=5)` 每次不同；`np.mean` 应接近 0 量级，`np.std` 约 0.3–0.6（仅 5 个点波动大）。
+## `A @ x` 手算
+
+`A=[[0,1],[-1,-1]]`, `x=[1,0]` → `[0, -1]`。
+
+## 综合第 1 组
+
+`t=np.linspace(0,2,41)` 含端点，步长约 `0.05`；`y=1-np.exp(-t/0.5)` 的 `y[-1]` 接近 `1-e^{-4}\approx 0.982`。

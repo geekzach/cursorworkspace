@@ -7,7 +7,7 @@
 python weeks/week01/ex01_syntax.py
 ```
 
-AI01 与 `src/ai01` 需：
+`weeks/ai01/*.py` 会自动把 `src` 加入 `sys.path`。在 **REPL / 自写草稿** 里 `import ai01` 则需要：
 
 ```bash
 export PYTHONPATH="${PYTHONPATH}:$(pwd)/src"

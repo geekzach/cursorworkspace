@@ -99,7 +99,7 @@ def main() -> None:
     plt.tight_layout()
     _save_or_show(fig, "ai01_fit_student.png")
 
-    # ========== DIY 区（见 README）==========
+    # ========== DIY 区（见 weeks/README.md 与 T05）==========
     # 在这里尝试：加噪声、改 n_samples、或预测角加速度等，并写一两句观察结论。
 
 
