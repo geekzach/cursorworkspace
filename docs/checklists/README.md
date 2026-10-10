@@ -2,7 +2,7 @@
 
 本目录安排 **数学 / 自控 / 项目 / CET-6（含每日单词）/ 复盘**，并写明 **本周建议阅读的教程章节 ID**（如 **T00–T02**），链接到 [`docs/tutorials/`](../tutorials/README.md)。
 
-**不在此重复教程正文。**
+**不在此重复教程正文。** 教程学什么、不学什么 → [`docs/tutorials/README.md`](../tutorials/README.md#scope-rails)（含 **覆盖 / 不覆盖**）。
 
 | 文件 | 说明 |
 |------|------|
