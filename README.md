@@ -4,9 +4,18 @@
 
 **当前阶段仍从「倒立摆（cart-pole）」入手**：倒立摆是平衡车在数学上的经典等效模型（轮轴支点、小角度近似等），便于在大三上打好 **拉格朗日建模、线性化、PID** 基础，再平滑过渡到仿真小车与硬件。
 
-> **当前进度**：**Week 1 — Python 基础与环境搭建**（`weeks/week01/`）。  
-> **可选 AI 支线**：大三上即可开始的 **神经网络拟合动力学**（`weeks/ai01_nn_dynamics/`，里程碑见 ROADMAP **M1.6**）。  
-> 倒立摆完整动力学闭环、MuJoCo、LQR 实物、强化学习等 **均未实现**；`src/inverted_pendulum/` 仅为包骨架，`sim/mujoco/` 为寒假阶段占位。
+## 一眼看懂（三件事）
+
+| | 打开什么 | 说明 |
+|---|----------|------|
+| **学教程** | [`docs/tutorials/`](docs/tutorials/README.md) | 中文长文 **T00–T06**（只在这里读全文） |
+| **周打卡** | [`docs/checklists/`](docs/checklists/) | 校历周：本周 **T 章节 ID**、课表、**CET-6 每日单词**、复盘 |
+| **代码练习** | [`weeks/`](weeks/week01/) | 可运行脚本；`TUTORIAL.md` / `CHECKLIST.md` 链回教程，不重复正文 |
+
+路线图 [`docs/ROADMAP.md`](docs/ROADMAP.md) · 思路核对 [`docs/tutorials/answers/`](docs/tutorials/answers/) · **周日 20:30** 用当周 `YYYY-Www.md` 复盘。
+
+> **当前进度**：**Week 1**（`weeks/week01/`）。**可选 AI01**（`weeks/ai01/` + `src/ai01/`，ROADMAP **M1.6**）。  
+> 倒立摆完整闭环、MuJoCo、LQR 实物、强化学习 **尚未实现**；`src/inverted_pendulum/` 为骨架，`sim/mujoco/` 为寒假占位。
 
 ---
 
@@ -21,19 +30,13 @@
 
 更完整的分阶段里程碑、复试 PPT 结构与暂定硬件 BOM 见 **[`docs/ROADMAP.md`](docs/ROADMAP.md)**。
 
-- **学教程** → [`docs/tutorials/`](docs/tutorials/README.md)（总教程 **T00–T06**，独立阅读）  
-- **本周打卡** → [`docs/checklists/`](docs/checklists/)（只写 **本周 T 章节 ID** + 课表 / **CET-6 每日单词** / 复盘，不嵌教程正文）  
-- **跑脚本** → `weeks/week01/`、`weeks/ai01_nn_dynamics/`（薄 `CHECKLIST.md` / `TUTORIAL.md` 链回教程）
-
-练习参考思路：[`docs/tutorials/answers/`](docs/tutorials/answers/)。**周日 20:30** 用当周 `YYYY-Www.md` 复盘。
-
 ---
 
 ## 学习路线概览（按学期）
 
 | 时间 | 阶段 | 重点 | 本仓库 |
 |------|------|------|--------|
-| **大三上**（2026.10 — 2027.01） | 倒立摆基础 + **可选 AI 支线** | Python、拉格朗日建模、线性化、PID；理解「摆 ≈ 平衡车模型」；**并行**可做 NN 拟合简化动力学 | `weeks/week01/` 起，填充 `src/inverted_pendulum/`；AI 见 `weeks/ai01_nn_dynamics/` |
+| **大三上**（2026.10 — 2027.01） | 倒立摆基础 + **可选 AI01** | Python、拉格朗日建模、线性化、PID；理解「摆 ≈ 平衡车模型」；**并行**可做 NN 拟合简化动力学 | `weeks/week01/` 起，填充 `src/inverted_pendulum/`；AI 见 `weeks/ai01/` + `src/ai01/` |
 | **寒假**（2027.01 — 2027.02） | MuJoCo 仿真 | MJCF 两轮平衡车、**LQR** 平衡控制 | 计划使用 [`sim/mujoco/`](sim/mujoco/)（占位）；**暂不**在 `requirements.txt` 加入 mujoco |
 | **大三下**（2027.03 — 2027.06） | 实物硬件 | ESP32/STM32（**C**）、IMU + 电机，移植 PID/LQR，仿真 vs 实物 | 文档与笔记为主；代码可另建 `firmware/` 等（后续） |
 | **2027 暑假前** | 学习控制 | MuJoCo 中简单 **RL** 平衡实验，与 LQR 对比，衔接具身智能 | 文档规划见 ROADMAP；实现放在寒假/下学期之后 |
@@ -43,7 +46,7 @@
 | 周次 | 主题 | 本仓库内容 |
 |------|------|------------|
 | **Week 1** | Python 语法、函数、列表/字典；一阶阶跃响应预览 | [`weeks/week01/`](weeks/week01/) |
-| **AI01**（可选，与 Week 1–2 并行） | ODE rollout → 小型 MLP 拟合一步动力学 | [`weeks/ai01_nn_dynamics/`](weeks/ai01_nn_dynamics/) |
+| **AI01**（可选，与 Week 1–2 并行） | ODE rollout → 小型 MLP 拟合一步动力学 | [`weeks/ai01/`](weeks/ai01/) |
 | Week 2 | numpy、向量、简单 ODE 数值解 | （待添加） |
 | Week 3 | 传递函数、框图、PID 概念与整定入门 | 骨架 → `controllers/pid.py` |
 | Week 4 | 状态空间、线性化倒立摆模型 | 骨架 → `model.py` |
@@ -123,14 +126,16 @@ python weeks/week01/hello_sim.py
 ```bash
 export PYTHONPATH="${PYTHONPATH}:$(pwd)/src"
 
-python weeks/ai01_nn_dynamics/ex01_preview_rollout.py
-python weeks/ai01_nn_dynamics/ex02_fit_dynamics.py   # 主作业：完成脚本内 TODO
-python weeks/ai01_nn_dynamics/demo_reference_end2end.py  # 参考答案演示
+python weeks/ai01/ex01_preview_rollout.py
+python weeks/ai01/ex02_fit_dynamics.py   # 主作业：完成脚本内 TODO
+python weeks/ai01/demo_reference_end2end.py  # 参考答案演示
 ```
 
-说明与 DIY 任务：[`weeks/ai01_nn_dynamics/README.md`](weeks/ai01_nn_dynamics/README.md) · 清单：[`CHECKLIST.md`](weeks/ai01_nn_dynamics/CHECKLIST.md)。
+教程与运行：[`weeks/ai01/TUTORIAL.md`](weeks/ai01/TUTORIAL.md) · 清单：[`CHECKLIST.md`](weeks/ai01/CHECKLIST.md)。
 
 ---
+
+<a id="repo-tree"></a>
 
 ## 仓库结构
 
@@ -149,12 +154,12 @@ python weeks/ai01_nn_dynamics/demo_reference_end2end.py  # 参考答案演示
 │   │   ├── TUTORIAL.md       # 薄链接入口
 │   │   ├── CHECKLIST.md
 │   │   └── ex*.py, hello_sim.py
-│   └── ai01_nn_dynamics/     # 可选 AI 支线（教程 T03 + T05）
-│       ├── TUTORIAL.md
-│       ├── README.md, CHECKLIST.md
+│   └── ai01/                 # 可选 AI01（教程 T03 + T05）
+│       ├── TUTORIAL.md       # 运行命令 + DIY（无单独 README）
+│       ├── CHECKLIST.md
 │       └── ex*.py, demo_reference_end2end.py
 └── src/
-    ├── learning/             # AI 支线：ODE 数据与 numpy MLP
+    ├── ai01/                 # AI01 库：摆 ODE、rollout、NumPy MLP
     └── inverted_pendulum/    # 倒立摆仿真包骨架（大三上逐步实现）
         ├── model.py
         ├── simulation.py

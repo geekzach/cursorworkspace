@@ -7,7 +7,7 @@
 | 动作 | 链接 |
 |------|------|
 | 读教程 | 上列 T03、T05（不在此粘贴正文） |
-| 跑脚本 | [`weeks/ai01_nn_dynamics/README.md`](../../weeks/ai01_nn_dynamics/README.md) |
-| 自查 | [`weeks/ai01_nn_dynamics/CHECKLIST.md`](../../weeks/ai01_nn_dynamics/CHECKLIST.md) |
+| 跑脚本 | [`weeks/ai01/TUTORIAL.md`](../../weeks/ai01/TUTORIAL.md) |
+| 自查 | [`weeks/ai01/CHECKLIST.md`](../../weeks/ai01/CHECKLIST.md) |
 
 校历周清单里「可选 AI01」块请链到本文件或当周 `YYYY-Www.md` 中的 AI01 一行。

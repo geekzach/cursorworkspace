@@ -6,7 +6,7 @@ AI01 主作业：训练小型 MLP，拟合一步动力学 (θ, ω, u) -> (θ⁺,
 
 运行（项目根目录）：
     export PYTHONPATH="$(pwd)/src"
-    python weeks/ai01_nn_dynamics/ex02_fit_dynamics.py
+    python weeks/ai01/ex02_fit_dynamics.py
 """
 
 from __future__ import annotations
@@ -22,8 +22,8 @@ if _SRC not in sys.path:
 import numpy as np
 import matplotlib.pyplot as plt
 
-from learning.mlp_numpy import MLP, evaluate_mse, train_epoch
-from learning.rollout import generate_dataset, train_val_split
+from ai01.mlp_numpy import MLP, evaluate_mse, train_epoch
+from ai01.rollout import generate_dataset, train_val_split
 
 
 def mse_per_dimension(Y_true: np.ndarray, Y_pred: np.ndarray) -> tuple[float, float]:

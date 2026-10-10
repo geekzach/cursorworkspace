@@ -11,4 +11,4 @@
 | [`2026-W41.md`](2026-W41.md) · [`2026-W42.md`](2026-W42.md) | 实例周 |
 | [`ai01-focus.md`](ai01-focus.md) | AI01 支线：仅 **T03 + T05** 与脚本指针 |
 
-脚本自查（短清单）：`weeks/week01/CHECKLIST.md`、`weeks/ai01_nn_dynamics/CHECKLIST.md`。
+脚本自查（短清单）：`weeks/week01/CHECKLIST.md`、`weeks/ai01/CHECKLIST.md`。

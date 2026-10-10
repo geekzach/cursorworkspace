@@ -2,7 +2,7 @@
 
 **完整教程序列只在本目录**（`docs/tutorials/`）。  
 **本周读哪几章、每天 CET-6 单词块** → [`docs/checklists/`](../checklists/)（如 [`2026-W42.md`](../checklists/2026-W42.md)）。  
-**可运行练习** → `weeks/week01/`、`weeks/ai01_nn_dynamics/`；`weeks/*/TUTORIAL.md` 仅为链接入口。
+**可运行练习** → `weeks/week01/`、`weeks/ai01/`；`weeks/*/TUTORIAL.md` 仅为链接入口。
 
 ---
 
@@ -61,13 +61,13 @@ Python / NumPy（T01–T02）
 | **T00** | [导读与环境](T00-导读与环境.md) | 根目录 `README.md` 环境段 |
 | **T01** | [Python 语言基础](T01-Python语言基础.md) | `weeks/week01/ex01`–`ex03` |
 | **T02** | [NumPy 与 Matplotlib](T02-NumPy与Matplotlib.md) | `weeks/week01/hello_sim.py` |
-| **T03** | [常微分方程与仿真直觉](T03-常微分方程与仿真直觉.md) | `weeks/ai01_nn_dynamics/ex01_preview_rollout.py` |
+| **T03** | [常微分方程与仿真直觉](T03-常微分方程与仿真直觉.md) | `weeks/ai01/ex01_preview_rollout.py` |
 | **T04** | [控制预备：PID 与状态空间直觉](T04-控制预备-PID与状态空间直觉.md) | `src/inverted_pendulum/`（逐步实现） |
-| **T05** | [AI01：神经网络拟合动力学](T05-AI01-神经网络拟合动力学.md) | `weeks/ai01_nn_dynamics/ex02_fit_dynamics.py` |
+| **T05** | [AI01：神经网络拟合动力学](T05-AI01-神经网络拟合动力学.md) | `weeks/ai01/ex02_fit_dynamics.py` |
 | **T06** | [选读：强化学习与 MuJoCo](T06-选读-强化学习与MuJoCo.md) | `sim/mujoco/`（寒假） |
 
 - **Week 1 结业**：**T00–T02** + [`weeks/week01/CHECKLIST.md`](../../weeks/week01/CHECKLIST.md)（脚本自查，不重复教程正文）。  
-- **AI01 结业**（可选）：在 **T02 熟练、T03 rollout 已跑通** 后做 **T05**；禁止「Week 1 只追 RL/大模型」。清单见 [`weeks/ai01_nn_dynamics/CHECKLIST.md`](../../weeks/ai01_nn_dynamics/CHECKLIST.md)。  
+- **AI01 结业**（可选）：在 **T02 熟练、T03 rollout 已跑通** 后做 **T05**；禁止「Week 1 只追 RL/大模型」。清单见 [`weeks/ai01/CHECKLIST.md`](../../weeks/ai01/CHECKLIST.md)。  
 - **经典控制主线（后续周次）**：**T03 → T04**，配合 `src/inverted_pendulum/`；**T06** 仅在寒假前/复试准备作概念浏览。
 
 **精读+练习参考用时**：T00 约 0.5 h；T01 3–5 h；T02 2–4 h；T03 2–3 h；T05 4–6 h；T04/T06 按周次穿插。
@@ -89,17 +89,7 @@ Python / NumPy（T01–T02）
 
 ## 仓库分工
 
-```text
-docs/tutorials/            # 总教程 T00–T06 + answers/ 参考思路
-docs/checklists/           # 校历周清单（教程只链接，不嵌正文）
-weeks/week01/              # Week 1 脚本 + 薄 CHECKLIST
-weeks/ai01_nn_dynamics/    # AI01 脚本 + 薄 CHECKLIST
-src/learning/              # AI01：摆 ODE、rollout、NumPy MLP
-src/inverted_pendulum/     # 倒立摆包骨架
-docs/ROADMAP.md            # 阶段里程碑
-```
-
-入口：[`weeks/week01/TUTORIAL.md`](../../weeks/week01/TUTORIAL.md) · [`weeks/ai01_nn_dynamics/TUTORIAL.md`](../../weeks/ai01_nn_dynamics/TUTORIAL.md)
+完整目录树见根目录 [`README.md` §仓库结构](../../README.md#repo-tree)。本教程对应练习入口：[`weeks/week01/TUTORIAL.md`](../../weeks/week01/TUTORIAL.md) · [`weeks/ai01/TUTORIAL.md`](../../weeks/ai01/TUTORIAL.md)
 
 ---
 
