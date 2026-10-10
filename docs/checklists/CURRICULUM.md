@@ -1,6 +1,6 @@
 # 大纲周次 ↔ 教程章节 ID
 
-校历每周具体打卡见 `YYYY-Www.md`；**学期周次与里程碑**见 [`SEMESTER_PLAN.md`](SEMESTER_PLAN.md)。此处只说明 **建议读哪些 T 章节**（全文在 `docs/tutorials/`）。  
+校历每周具体打卡见 `YYYY-Www.md`；**学期周次与里程碑**见 [`SEMESTER_PLAN.md`](SEMESTER_PLAN.md)（**2026-10-10** 起顺延 1 周，Week 1 自 **2026-W42** 重开）。此处只说明 **建议读哪些 T 章节**（全文在 `docs/tutorials/`）。  
 **覆盖 / 不覆盖** 边界见 [`docs/tutorials/README.md`](../tutorials/README.md#scope-rails) 中「本教程覆盖 / 不覆盖」。
 
 | 大纲周次 | 本周教程 ID | 主要脚本 / 代码 |
