@@ -21,7 +21,7 @@
 
 更完整的分阶段里程碑、复试 PPT 结构与暂定硬件 BOM 见 **[`docs/ROADMAP.md`](docs/ROADMAP.md)**。
 
-**周学习节奏**：数学 / 自控 / CET-6 / 本仓库教程等见 [`docs/checklists/`](docs/checklists/)（当周例：[`2026-W41.md`](docs/checklists/2026-W41.md)）；**周日 20:30** 用该清单复盘。教程索引：[`docs/tutorials/README.md`](docs/tutorials/README.md)。
+**周学习节奏**：数学 / 自控 / CET-6 / 本仓库教程等见 [`docs/checklists/`](docs/checklists/)（例：[`2026-W42.md`](docs/checklists/2026-W42.md) 按课表排块）；**周日 20:30** 用当周清单复盘。教程索引：[`docs/tutorials/README.md`](docs/tutorials/README.md)。
 
 ---
 

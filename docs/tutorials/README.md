@@ -12,4 +12,4 @@
 ## 与周计划的关系
 
 - 每周在 [`docs/checklists/`](../checklists/) 填一份清单（模板 [`WEEKLY_TEMPLATE.md`](../checklists/WEEKLY_TEMPLATE.md)）。
-- **周日 20:30** 用当周清单（如 [`2026-W41.md`](../checklists/2026-W41.md)）做复盘，并对照上表周目录里的 `CHECKLIST.md`。
+- **周日 20:30** 用当周清单（如 [`2026-W42.md`](../checklists/2026-W42.md)）做复盘，并对照上表周目录里的 `CHECKLIST.md`。
