@@ -4,7 +4,7 @@
 
 > **当前进度（2026 年 10 月）**：仅完成 **Week 1**（`weeks/week01/`）— Python 基础与环境搭建。  
 > MuJoCo、LQR 闭环、实物硬件、强化学习等 **均未实现**；`src/inverted_pendulum/` 仍为包骨架。  
-> **校历周次与教程映射**（2026-W42 → 2027-W04）：[`docs/checklists/SEMESTER_PLAN.md`](checklists/SEMESTER_PLAN.md)。
+> **校历周次与教程映射**（2026-W42 → 2027-W05；2026-10-10 顺延 1 周）：[`docs/checklists/SEMESTER_PLAN.md`](checklists/SEMESTER_PLAN.md)。
 
 ---
 
