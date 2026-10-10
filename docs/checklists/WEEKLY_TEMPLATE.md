@@ -111,5 +111,7 @@
 
 | 类型 | 路径 / 说明 |
 |------|-------------|
-| 主线教程 | |
-| 可选 AI 支线 | |
+| **本周教程 ID** | 例：**T00–T02** → 只链 [`docs/tutorials/`](../tutorials/README.md) 对应章节，不写正文 |
+| 主线脚本 | 例：`weeks/week01/` |
+| 可选 AI01 | **T03 + T05** → [`ai01-focus.md`](ai01-focus.md) |
+| 大纲对照 | [`CURRICULUM.md`](CURRICULUM.md) |

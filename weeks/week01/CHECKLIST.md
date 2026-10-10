@@ -1,36 +1,23 @@
-# Week 1 学习清单
+# Week 1 · 脚本自查（短清单）
 
-完成下列任务后，你就具备继续 Week 2（向量、numpy、简单 ODE）的基础。可在每项前打 `[x]`。
+教程正文在 **`docs/tutorials/`**（本周建议 **T00–T02**）。  
+校历打卡（数学 / 自控 / **CET-6 每日单词** / 复盘）→ [`docs/checklists/`](../../docs/checklists/)（如 [`2026-W42.md`](../../docs/checklists/2026-W42.md)）。
 
-## 环境与工具
+## 环境
 
-- [ ] 已安装 Python 3.10+（`python3 --version` 能正常显示版本）
-- [ ] 在项目根目录创建虚拟环境并安装依赖（见根目录 `README.md`）
-- [ ] 能成功运行 `python weeks/week01/ex01_syntax.py` 等脚本
+- [ ] Python 3.10+、虚拟环境、`pip install -r requirements.txt`
+- [ ] 教程入口：[`TUTORIAL.md`](TUTORIAL.md) → **T00–T02**
 
-## Python 基础练习
+## 脚本（`weeks/week01/`）
 
-- [ ] 完成并理解 `ex01_syntax.py`（变量、类型、`if`/`for`）
-- [ ] 完成并理解 `ex02_functions.py`（函数定义、返回值、默认参数）
-- [ ] 完成并理解 `ex03_lists_dicts.py`（列表、字典、简单推导式）
-- [ ] 尝试修改练习中的数字或打印内容，观察输出变化（主动实验）
+- [ ] `ex01_syntax.py` · [T01](../../docs/tutorials/T01-Python语言基础.md)
+- [ ] `ex02_functions.py` · [T01](../../docs/tutorials/T01-Python语言基础.md)
+- [ ] `ex03_lists_dicts.py` · [T01](../../docs/tutorials/T01-Python语言基础.md)
+- [ ] `hello_sim.py` · [T02](../../docs/tutorials/T02-NumPy与Matplotlib.md)
 
-## 控制方向预习
+## 收尾
 
-- [ ] 运行 `hello_sim.py`，看到一阶系统阶跃响应曲线
-- [ ] 能用自己的话解释：图中横轴、纵轴分别是什么；`tau` 越大曲线有何变化（可改 `tau` 再运行对比）
-- [ ] 阅读 `hello_sim.py` 中的中文注释，记下「传递函数」「阶跃响应」两个词的含义（详细推导在后续周次）
+- [ ] 完成 [T01](../../docs/tutorials/T01-Python语言基础.md)、[T02](../../docs/tutorials/T02-NumPy与Matplotlib.md) 文末 **必做**
+- [ ] 浏览 `src/inverted_pendulum/` 骨架
 
-## 项目结构（浏览即可）
-
-- [ ] 打开 `src/inverted_pendulum/`，知道未来模型、PID、LQR、仿真会放在哪里
-- [ ] 确认当前**没有**真正的倒立摆仿真——Week 1 只做基础
-
-## 自测（可选）
-
-- [ ] 写一段 5 行以内的小脚本：定义列表 `[1,2,3]`，用 `for` 循环打印每个元素的平方
-- [ ] 向同学或自己口述：本项目最终目标是什么（复试演示倒立摆控制仿真）
-
----
-
-**下一周预告（Week 2）**：numpy 数组、向量化计算、用 scipy 解简单微分方程，并开始接触状态向量。
+**下一大纲周**：Week 2 · 教程 **T02–T03** · 见 [`CURRICULUM.md`](../../docs/checklists/CURRICULUM.md)

@@ -124,7 +124,8 @@
 weeks/week01/              # 主线：Python 基础练习脚本 + CHECKLIST
 weeks/ai01_nn_dynamics/    # AI 支线：NN 拟合一步动力学脚本 + CHECKLIST
 weeks/week02/ …            # 大三上：numpy、ODE、建模与 PID（待添加）
-docs/tutorials/            # 中文教程全文 + answers/（Week1、ODE、AI01）
+docs/tutorials/            # 总教程 T00–T06 + answers/
+docs/checklists/           # 校历周清单（本周 T 章节 ID + CET-6 每日单词）
 docs/ROADMAP.md            # 本文件
 src/inverted_pendulum/     # 倒立摆仿真包（逐步实现）
 src/learning/              # AI 支线库：pendulum、rollout、mlp_numpy

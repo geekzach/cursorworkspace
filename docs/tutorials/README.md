@@ -1,112 +1,114 @@
-# 教程系列目录 · 两轮自平衡 / 倒立摆学习仓库
+# 总教程 · Python + 控制 + AI（两轮自平衡 / 倒立摆）
 
-欢迎。本系列面向 **西电机器人工程大三**、Python 尚弱、在 **VS Code Remote-WSL + conda 环境 `pendulum`** 下学习的同学；目标方向是 **东南大学 085400 专硕 / 具身智能**。
-
-**所有长文教程只在本目录**（`docs/tutorials/`）。`weeks/week01/`、`weeks/ai01_nn_dynamics/` 放练习脚本与清单；其中的 `TUTORIAL.md` 仅为**链接入口**，不重复正文。
-
----
-
-## 唯一推荐阅读路径（跟读即可）
-
-按编号顺序读 Markdown，并在对应目录跑脚本、做文末练习：
-
-| 步 | 读 | 做（仓库根目录） |
-|----|-----|------------------|
-| 0 | [00 如何使用本系列](00_how_to_use.md) | 配好 conda `pendulum`，跑通 `ex01_syntax.py` |
-| 1 | [01 Python 基础](01_python_basics.md) | `ex01` → `ex02` → `ex03` |
-| 2 | [02 NumPy 与 Matplotlib](02_numpy_matplotlib.md) | `hello_sim.py`（改 `tau` 对比） |
-| 3 | [03 ODE 直觉](03_ode_intuition.md) | `ex01_preview_rollout.py`（设 `PYTHONPATH`） |
-| 4 | [04 神经网络拟合动力学](04_nn_dynamics_fit.md) | `ex02_fit_dynamics.py` 完成 TODO |
-
-- **Week 1 结业**：完成步 0–2 + [`weeks/week01/CHECKLIST.md`](../../weeks/week01/CHECKLIST.md)。  
-- **AI01 结业**（可选）：完成步 3–4 + [`weeks/ai01_nn_dynamics/CHECKLIST.md`](../../weeks/ai01_nn_dynamics/CHECKLIST.md)。  
-- 步 3–4 可与步 1–2 **并行**，但建议先会 numpy 画图再碰 AI01。
-
-**精读+练习总用时（参考）**：步 0 约 0.5 h；步 1 约 3–5 h；步 2 约 2–4 h；步 3 约 2–3 h；步 4 约 4–6 h。
+**完整教程序列只在本目录**（`docs/tutorials/`）。  
+**本周读哪几章、每天 CET-6 单词块** → [`docs/checklists/`](../checklists/)（如 [`2026-W42.md`](../checklists/2026-W42.md)）。  
+**可运行练习** → `weeks/week01/`、`weeks/ai01_nn_dynamics/`；`weeks/*/TUTORIAL.md` 仅为链接入口。
 
 ---
 
-## 每日学习安排（考研压力下偏「满负荷」）
+## 读者与前提
 
-大三上要同时扛 **考研数学 / 专业课自控** 和 **本项目**。下面按「工作日默认」设计；**具体上课空档与当周项目块**以 [`docs/checklists/`](../checklists/) 为准（如 [`2026-W42.md`](../checklists/2026-W42.md)）。
-
-### 默认日（目标合计约 2.5–4 h，可分早晚两段）
-
-| 块 | 时长 | 做什么 | 可检验产出 |
-|----|------|--------|------------|
-| **数学** | **60–90 min** | 高数/线代/概率按考研计划刷题 | 今日题号 + 1 道错题要点 |
-| **自控 / 专业课** | **40–60 min** | 教材一节或真题半套；阶跃、一阶系统、根轨迹等与本项目挂钩处记一句 | 半页笔记或 3 个关键词 |
-| **项目 / 本教程** | **60–90 min** | 严格按上表「推荐阅读路径」一步：读一节 MD + 跑脚本 + **必做练习至少 2 项** | 终端截图或改参记录一行 |
-| **CET-6 · 单词** | **每天 20–30 min** | **课多日也要做**；不攒到周末 | 今日词表范围或 App 打卡 |
-
-**一周节奏示例**（可按校历微调；有课表时优先用 checklist 里的时段）：
-
-| 周一–周二 | 步 0–1（环境 + Python） |
-| 周三–周四 | 步 2（numpy + `hello_sim`） |
-| 周五 | 复习：重做 `clamp`、改 `tau`、口述阶跃响应 |
-| 周六 | 数学加练 + 步 3（ODE / rollout） |
-| 周日 | 步 4 或 AI01 TODO 一块（2 h）+ **20:30 周复盘**（当周 [`checklists`](../checklists/)） |
-
-### _fallback 日（合计约 1–1.5 h，忙课/实验日）
-
-仍建议 **不要三天完全零接触**，否则 conda 环境和语法手感会断：
-
-1. **数学 30 min**（保底刷题）  
-2. **自控 20 min**（只复习笔记，不新开章节）  
-3. **CET-6 · 单词 20 min**（保底，不挪到周末）  
-4. **项目 30–40 min**：只跑一个已学脚本 + 改一个参数 + 写一句现象（例如 `tau=1.0` 更慢）
-
-### 执行习惯（可打勾）
-
-- [ ] 每晚用 1 分钟写：**明天项目块对应教程第几步**  
-- [ ] 项目块结束必做：**关闭 VS Code 前 commit 笔记或练习脚本到个人 fork**（本仓库作业在本地即可）  
-- [ ] 连续 2 个 fallback 日后，下一个默认日把 **项目块补到 90 min**
+西电机器人大三、Python 较弱、**VS Code + WSL**、可用 **conda 环境 `pendulum`**（等价步骤见 [T00 §0.3](T00-导读与环境.md#env-setup)）。目标：**东南大学 085400 专硕 / 具身智能**。
 
 ---
 
-## 与周清单（checklists）的关系
+<a id="scope-rails"></a>
 
-- 模板：[`docs/checklists/WEEKLY_TEMPLATE.md`](../checklists/WEEKLY_TEMPLATE.md)（含课表排块、**每日单词** 勾选）。  
-- 当周实例：如 [`2026-W42.md`](../checklists/2026-W42.md)。  
-- **周日 20:30**：用当周 checklist 复盘，并对照本节「推荐阅读路径」与 `weeks/*/CHECKLIST.md`。
+## 参考与路线说明
 
----
+本仓库走 **机器人 / 经典控制友好** 的 Python + ML 路径：**先能仿真与讲清模型，再谈学习**；工具从 **NumPy 手写小网络** 起步，不第一周就上 PyTorch / 强化学习 / Agent 框架。
 
-## 仓库怎么分工（避免文件散落）
+与外部自学的关系（建议并行阅读，不必全做完再动本仓库）：
+
+| 资源 | 用途 |
+|------|------|
+| [Arjun Virk · ML Bible（from-scratch 路线）](https://www.arjunvirk.com/writing/ml-guide) | 强调 **基础数学与经典 ML → 神经网络** 的顺序；本教程 AI 部分对齐其精神：**理解再写代码**，而非先堆 trendy 工具。你可把 Virk 书中「Classical ML / NN 数学」作课外加深；**不必**在本项目里学 Transformer、Vision、Agent 章节。 |
+| [Python 官方教程](https://docs.python.org/3/tutorial/) | T01 语法与模块习惯的对照 |
+| [NumPy Quickstart](https://numpy.org/doc/stable/user/quickstart.html) | T02 数组、广播、向量化（控制里状态就是向量） |
+| 教材 *Feedback Systems*（Åström & Murray，[免费在线版](https://fbsbook.org/)）或本校《自动控制原理》 | T03–T04 状态空间、反馈、PID/LQR 的体系化补充 |
+
+**控制 + 学习的技术顺序（本仓库强制节奏）**
 
 ```text
-weeks/week01/              # 主线练习脚本 + CHECKLIST（Week 1）
-weeks/ai01_nn_dynamics/    # AI 支线脚本 + CHECKLIST
-docs/tutorials/            # 中文教程全文 + answers/ 参考思路（仅此一处）
-docs/checklists/           # 周学习清单（课表、CET-6 每日单词、复盘）
-src/learning/              # AI01 依赖的 ODE / MLP 代码
-src/inverted_pendulum/     # 倒立摆包骨架（后续周次填充）
+Python / NumPy（T01–T02）
+    → ODE 与仿真 rollout（T03）
+    → 经典控制直觉 PID / 状态空间（T04）+ inverted_pendulum 主线
+    → 监督学习最小集：划分数据、MSE、过拟合、train/val（T05 前半概念）
+    → 系统辨识 / 学习动力学：MLP 拟合一步 ẋ 或 x⁺（T05 + AI01）
+    → 寒假后：MuJoCo + LQR；再谈 RL 闭环（T06 / ROADMAP 阶段四，非 Week 1）
+```
+
+### 本教程覆盖 / 不覆盖
+
+| **覆盖**（校历周清单只应指向这些） | **不覆盖**（避免学半截走错方向） |
+|-----------------------------------|----------------------------------|
+| Python 3、科学计算绘图、项目目录与 conda/venv | 深度学习框架（PyTorch / TensorFlow / JAX） |
+| NumPy 向量/矩阵运算 **直觉**（为状态空间与 MLP 服务） | 完整考研线代课（仅教程内用到的 2–4 维状态） |
+| ODE、欧拉 / RK4 / `solve_ivp`、简化摆 rollout | 把 RL 当第一周入门；T06 仅为**选读概念** |
+| PID、框图、线性化与 \(A,B\) **入门** | 大模型、Transformer、RAG、Agent 工程 |
+| 监督学习：**训练/验证集、MSE、过拟合、隐藏层容量** | 端到端黑盒「直接出电机指令」跳过建模 |
+| AI01：**仿真生成标签 → NumPy MLP 拟合动力学**（系统 ID 思想） | MuJoCo 安装、PPO 训练实现（见 ROADMAP 寒假后） |
+| 与平衡车/倒立摆相关的复试叙事挂钩 | 替代本校自控/数学课的系统学习 |
+
+周打卡 [`docs/checklists/`](../checklists/) 的 **「本周教程 ID」** 必须落在上表 **覆盖** 列；若本周忙，用 **T00–T02** 保底，**不要**为了「赶 AI」跳过 ODE 与经典控制主线。
+
+---
+
+## 推荐阅读路径（章节 ID）
+
+| ID | 章节 | 练习代码 |
+|----|------|----------|
+| **T00** | [导读与环境](T00-导读与环境.md) | 根目录 `README.md` 环境段 |
+| **T01** | [Python 语言基础](T01-Python语言基础.md) | `weeks/week01/ex01`–`ex03` |
+| **T02** | [NumPy 与 Matplotlib](T02-NumPy与Matplotlib.md) | `weeks/week01/hello_sim.py` |
+| **T03** | [常微分方程与仿真直觉](T03-常微分方程与仿真直觉.md) | `weeks/ai01_nn_dynamics/ex01_preview_rollout.py` |
+| **T04** | [控制预备：PID 与状态空间直觉](T04-控制预备-PID与状态空间直觉.md) | `src/inverted_pendulum/`（逐步实现） |
+| **T05** | [AI01：神经网络拟合动力学](T05-AI01-神经网络拟合动力学.md) | `weeks/ai01_nn_dynamics/ex02_fit_dynamics.py` |
+| **T06** | [选读：强化学习与 MuJoCo](T06-选读-强化学习与MuJoCo.md) | `sim/mujoco/`（寒假） |
+
+- **Week 1 结业**：**T00–T02** + [`weeks/week01/CHECKLIST.md`](../../weeks/week01/CHECKLIST.md)（脚本自查，不重复教程正文）。  
+- **AI01 结业**（可选）：在 **T02 熟练、T03 rollout 已跑通** 后做 **T05**；禁止「Week 1 只追 RL/大模型」。清单见 [`weeks/ai01_nn_dynamics/CHECKLIST.md`](../../weeks/ai01_nn_dynamics/CHECKLIST.md)。  
+- **经典控制主线（后续周次）**：**T03 → T04**，配合 `src/inverted_pendulum/`；**T06** 仅在寒假前/复试准备作概念浏览。
+
+**精读+练习参考用时**：T00 约 0.5 h；T01 3–5 h；T02 2–4 h；T03 2–3 h；T05 4–6 h；T04/T06 按周次穿插。
+
+---
+
+## 与校历周清单的关系
+
+| 你想… | 打开 |
+|--------|------|
+| 学完整教程 | 本目录 T00 起按 ID 读 |
+| 本周读哪几章（如 **T00–T02**） | 当周 [`docs/checklists/YYYY-Www.md`](../checklists/) 顶部「本周教程」行 |
+| 大纲周次 ↔ 章节 ID 对照 | [`docs/checklists/CURRICULUM.md`](../checklists/CURRICULUM.md) |
+| 课表、**CET-6 每日单词**、周日复盘 | 同上 ISO 周文件或 [`WEEKLY_TEMPLATE.md`](../checklists/WEEKLY_TEMPLATE.md) |
+
+**CET-6 · 单词**：每天 **20–30 min**，课多日也不攒到周末（模板与各周清单已留打卡位）。
+
+---
+
+## 仓库分工
+
+```text
+docs/tutorials/            # 总教程 T00–T06 + answers/ 参考思路
+docs/checklists/           # 校历周清单（教程只链接，不嵌正文）
+weeks/week01/              # Week 1 脚本 + 薄 CHECKLIST
+weeks/ai01_nn_dynamics/    # AI01 脚本 + 薄 CHECKLIST
+src/learning/              # AI01：摆 ODE、rollout、NumPy MLP
+src/inverted_pendulum/     # 倒立摆包骨架
 docs/ROADMAP.md            # 阶段里程碑
 ```
 
-从周次目录进来：[`weeks/week01/TUTORIAL.md`](../../weeks/week01/TUTORIAL.md) · [`weeks/ai01_nn_dynamics/TUTORIAL.md`](../../weeks/ai01_nn_dynamics/TUTORIAL.md) → 指回上表路径。
+入口：[`weeks/week01/TUTORIAL.md`](../../weeks/week01/TUTORIAL.md) · [`weeks/ai01_nn_dynamics/TUTORIAL.md`](../../weeks/ai01_nn_dynamics/TUTORIAL.md)
 
 ---
 
 ## 练习与答案
 
-每节文末 **必做 ≥3、选做 1–2**。正文不贴完整作业答案：
-
-- 核对思路：[`answers/`](answers/)  
-- 代码作业：以 `weeks/` 下脚本为准（如 `ex02_fit_dynamics.py` 的 TODO）
-
----
-
-## 学习心态（一句话）
-
-**先读懂 → 改参数看现象 → 自己写一小段**；复试讲「为什么」，不是背代码。
+每章 **必做 / 选做** 在正文末尾。完整作业代码以 `weeks/` 为准；思路核对见 [`answers/`](answers/)（标注对应 **T** 章节）。
 
 ---
 
 ## 相关文档
 
-- 项目总览：[`README.md`](../../README.md)  
-- 阶段路线图：[`docs/ROADMAP.md`](../ROADMAP.md)  
-- 周学习清单：[`docs/checklists/`](../checklists/)  
-- Week 1 自查：[`weeks/week01/CHECKLIST.md`](../../weeks/week01/CHECKLIST.md)  
-- AI01 自查：[`weeks/ai01_nn_dynamics/CHECKLIST.md`](../../weeks/ai01_nn_dynamics/CHECKLIST.md)
+- [`README.md`](../../README.md) · [`docs/ROADMAP.md`](../ROADMAP.md) · [`docs/checklists/`](../checklists/)

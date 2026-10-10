@@ -21,9 +21,11 @@
 
 更完整的分阶段里程碑、复试 PPT 结构与暂定硬件 BOM 见 **[`docs/ROADMAP.md`](docs/ROADMAP.md)**。
 
-**中文跟读教程**（Week 1 + AI01 + numpy/ODE 直觉）：从 **[`docs/tutorials/README.md`](docs/tutorials/README.md)** 开始，含练习与 [`answers/`](docs/tutorials/answers/) 参考思路。
+- **学教程** → [`docs/tutorials/`](docs/tutorials/README.md)（总教程 **T00–T06**，独立阅读）  
+- **本周打卡** → [`docs/checklists/`](docs/checklists/)（只写 **本周 T 章节 ID** + 课表 / **CET-6 每日单词** / 复盘，不嵌教程正文）  
+- **跑脚本** → `weeks/week01/`、`weeks/ai01_nn_dynamics/`（薄 `CHECKLIST.md` / `TUTORIAL.md` 链回教程）
 
-**周学习节奏**（数学 / 自控 / **CET-6 每日单词** / 项目块）：[`docs/checklists/`](docs/checklists/)（例：[`2026-W42.md`](docs/checklists/2026-W42.md) 按课表排时段）；**周日 20:30** 用当周清单复盘，并对照教程路径与 `weeks/*/CHECKLIST.md`。
+练习参考思路：[`docs/tutorials/answers/`](docs/tutorials/answers/)。**周日 20:30** 用当周 `YYYY-Www.md` 复盘。
 
 ---
 
@@ -147,7 +149,7 @@ python weeks/ai01_nn_dynamics/demo_reference_end2end.py  # 参考答案演示
 │   │   ├── TUTORIAL.md       # 薄链接入口
 │   │   ├── CHECKLIST.md
 │   │   └── ex*.py, hello_sim.py
-│   └── ai01_nn_dynamics/     # 可选 AI 支线（教程 docs/tutorials/ 03–04）
+│   └── ai01_nn_dynamics/     # 可选 AI 支线（教程 T03 + T05）
 │       ├── TUTORIAL.md
 │       ├── README.md, CHECKLIST.md
 │       └── ex*.py, demo_reference_end2end.py
