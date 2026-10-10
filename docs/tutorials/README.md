@@ -70,7 +70,7 @@ Python / NumPy（T01–T02）
 - **AI01 结业**（可选）：在 **T02 熟练、T03 rollout 已跑通** 后做 **T05**；禁止「Week 1 只追 RL/大模型」。清单见 [`weeks/ai01/CHECKLIST.md`](../../weeks/ai01/CHECKLIST.md)。  
 - **经典控制主线（后续周次）**：**T03 → T04**，配合 `src/inverted_pendulum/`；**T06** 仅在寒假前/复试准备作概念浏览。
 
-**精读+练习参考用时**：T00 约 0.5 h；T01 3–5 h；T02 2–4 h；T03 2–3 h；T05 4–6 h；T04/T06 按周次穿插。
+**精读+练习参考用时**（零基础讲义，含练习）：T00 约 0.5–1 d；**T01 5–8 d**；**T02 5–7 d**；T03 6–9 d；T04 7–10 d；T05 5–8 d（可选）；T06 选读。校历映射见 [`SEMESTER_PLAN.md`](../checklists/SEMESTER_PLAN.md)。
 
 ---
 
