@@ -28,7 +28,7 @@
 
 ## 每日学习安排（考研压力下偏「满负荷」）
 
-大三上要同时扛 **考研数学 / 专业课自控** 和 **本项目**。下面按「工作日默认」设计；周末可把「项目块」加长或补周测。
+大三上要同时扛 **考研数学 / 专业课自控** 和 **本项目**。下面按「工作日默认」设计；**具体上课空档与当周项目块**以 [`docs/checklists/`](../checklists/) 为准（如 [`2026-W42.md`](../checklists/2026-W42.md)）。
 
 ### 默认日（目标合计约 2.5–4 h，可分早晚两段）
 
@@ -37,14 +37,15 @@
 | **数学** | **60–90 min** | 高数/线代/概率按考研计划刷题 | 今日题号 + 1 道错题要点 |
 | **自控 / 专业课** | **40–60 min** | 教材一节或真题半套；阶跃、一阶系统、根轨迹等与本项目挂钩处记一句 | 半页笔记或 3 个关键词 |
 | **项目 / 本教程** | **60–90 min** | 严格按上表「推荐阅读路径」一步：读一节 MD + 跑脚本 + **必做练习至少 2 项** | 终端截图或改参记录一行 |
+| **CET-6 · 单词** | **每天 20–30 min** | **课多日也要做**；不攒到周末 | 今日词表范围或 App 打卡 |
 
-**一周节奏示例**（可按校历微调）：
+**一周节奏示例**（可按校历微调；有课表时优先用 checklist 里的时段）：
 
 | 周一–周二 | 步 0–1（环境 + Python） |
 | 周三–周四 | 步 2（numpy + `hello_sim`） |
 | 周五 | 复习：重做 `clamp`、改 `tau`、口述阶跃响应 |
 | 周六 | 数学加练 + 步 3（ODE / rollout） |
-| 周日 | 步 4 或 AI01 TODO 一块（2 h）+ 周复盘打 CHECKLIST |
+| 周日 | 步 4 或 AI01 TODO 一块（2 h）+ **20:30 周复盘**（当周 [`checklists`](../checklists/)） |
 
 ### _fallback 日（合计约 1–1.5 h，忙课/实验日）
 
@@ -52,7 +53,8 @@
 
 1. **数学 30 min**（保底刷题）  
 2. **自控 20 min**（只复习笔记，不新开章节）  
-3. **项目 30–40 min**：只跑一个已学脚本 + 改一个参数 + 写一句现象（例如 `tau=1.0` 更慢）
+3. **CET-6 · 单词 20 min**（保底，不挪到周末）  
+4. **项目 30–40 min**：只跑一个已学脚本 + 改一个参数 + 写一句现象（例如 `tau=1.0` 更慢）
 
 ### 执行习惯（可打勾）
 
@@ -62,12 +64,21 @@
 
 ---
 
+## 与周清单（checklists）的关系
+
+- 模板：[`docs/checklists/WEEKLY_TEMPLATE.md`](../checklists/WEEKLY_TEMPLATE.md)（含课表排块、**每日单词** 勾选）。  
+- 当周实例：如 [`2026-W42.md`](../checklists/2026-W42.md)。  
+- **周日 20:30**：用当周 checklist 复盘，并对照本节「推荐阅读路径」与 `weeks/*/CHECKLIST.md`。
+
+---
+
 ## 仓库怎么分工（避免文件散落）
 
 ```text
 weeks/week01/              # 主线练习脚本 + CHECKLIST（Week 1）
 weeks/ai01_nn_dynamics/    # AI 支线脚本 + CHECKLIST
 docs/tutorials/            # 中文教程全文 + answers/ 参考思路（仅此一处）
+docs/checklists/           # 周学习清单（课表、CET-6 每日单词、复盘）
 src/learning/              # AI01 依赖的 ODE / MLP 代码
 src/inverted_pendulum/     # 倒立摆包骨架（后续周次填充）
 docs/ROADMAP.md            # 阶段里程碑
@@ -96,5 +107,6 @@ docs/ROADMAP.md            # 阶段里程碑
 
 - 项目总览：[`README.md`](../../README.md)  
 - 阶段路线图：[`docs/ROADMAP.md`](../ROADMAP.md)  
+- 周学习清单：[`docs/checklists/`](../checklists/)  
 - Week 1 自查：[`weeks/week01/CHECKLIST.md`](../../weeks/week01/CHECKLIST.md)  
 - AI01 自查：[`weeks/ai01_nn_dynamics/CHECKLIST.md`](../../weeks/ai01_nn_dynamics/CHECKLIST.md)

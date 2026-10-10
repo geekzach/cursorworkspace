@@ -21,7 +21,9 @@
 
 更完整的分阶段里程碑、复试 PPT 结构与暂定硬件 BOM 见 **[`docs/ROADMAP.md`](docs/ROADMAP.md)**。
 
-**中文跟读教程**（Week 1 + AI01 + numpy/ODE 直觉）：从 **[`docs/tutorials/README.md`](docs/tutorials/README.md)** 开始，含练习与参考思路。
+**中文跟读教程**（Week 1 + AI01 + numpy/ODE 直觉）：从 **[`docs/tutorials/README.md`](docs/tutorials/README.md)** 开始，含练习与 [`answers/`](docs/tutorials/answers/) 参考思路。
+
+**周学习节奏**（数学 / 自控 / **CET-6 每日单词** / 项目块）：[`docs/checklists/`](docs/checklists/)（例：[`2026-W42.md`](docs/checklists/2026-W42.md) 按课表排时段）；**周日 20:30** 用当周清单复盘，并对照教程路径与 `weeks/*/CHECKLIST.md`。
 
 ---
 
@@ -135,7 +137,8 @@ python weeks/ai01_nn_dynamics/demo_reference_end2end.py  # 参考答案演示
 ├── README.md                 # 本文件
 ├── docs/
 │   ├── ROADMAP.md            # 分阶段路线图、复试 PPT、暂定 BOM
-│   └── tutorials/            # 中文教程全文（唯一位置；含每日计划与 answers/）
+│   ├── checklists/           # 周学习清单（模板 + 当周实例；课表与每日单词）
+│   └── tutorials/            # 中文教程全文（唯一位置；含 answers/）
 ├── requirements.txt          # Python 依赖（固定版本）
 ├── sim/
 │   └── mujoco/               # 寒假 MuJoCo 占位（见目录内 README）
