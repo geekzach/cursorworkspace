@@ -37,7 +37,6 @@ Thumbs.db
 
 # Project outputs
 *.png
-!docs/**/*.png
 figures/
 output/
 

@@ -1,32 +1,5 @@
-# 两轮自平衡小车 · 学习项目（复试准备）
+# 两轮自平衡小车 · 学习仓库（精简版）
 
-面向准备 **东南大学 085400 电子信息（专硕）** 的本科同学：以 **两轮自平衡小车** 为最终目标（**先 MuJoCo 仿真、再实物**），从 **倒立摆（cart-pole）** 打好 Python、建模与经典控制基础；**本学期** ML 按 **[T05](docs/tutorials/T05-AI01-神经网络拟合动力学.md)** 自学李航《统计学习方法》，**寒假**再写 `weeks/ai01/` 代码。
-
-## 三个入口
-
-| 去哪 | 链接 | 说明 |
-|------|------|------|
-| **学教程** | [`docs/tutorials/`](docs/tutorials/README.md) | **知识点** + **书目**（T00–T06；无长代码） |
-| **本周打卡** | [`docs/checklists/`](docs/checklists/README.md) | **日期计划**：[`SEMESTER_PLAN.md`](docs/checklists/SEMESTER_PLAN.md)（`2026-10-12` 起）· 当周 **`YYYY-MM-DD.md`**（周一）· 寒假 AI → [`winter-ai.md`](docs/checklists/winter-ai.md) |
-| **跑代码** | [`weeks/`](weeks/README.md) · [`src/`](src/) | 每周 **`examples` → `exercises` → `answers`**（本学期 `week01` / `week02`；寒假 `ai01`） |
-
-**路线图** [`docs/ROADMAP.md`](docs/ROADMAP.md) · **周日 20:30** 复盘。
-
-> **仓库进度（2026-10）**：`week01` / `week02` 示例可用；`src/inverted_pendulum/` 骨架；MuJoCo / LQR / RL 未实现。
-
----
-
-## 环境（最短）
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -U pip && pip install -r requirements.txt
-python weeks/week01/exercises/ex01_syntax.py
-```
-
-`src` 包：`export PYTHONPATH="${PYTHONPATH}:$(pwd)/src"`。详见 **[T00 §0.3](docs/tutorials/T00-导读与环境.md#env-setup)**。
-
----
-
-本项目为学习用途的教学脚手架。祝复试顺利。
+- **[学期计划与周打卡](plan/SEMESTER_PLAN.md)**：`SEMESTER_PLAN.md` 总览；当周打开 `plan/YYYY-MM-DD.md`（周一日期），含数学 / 自控 / CET-6 / 李航范围。
+- **[周学习导引](guides/README.md)**：学什么、读哪本书/哪一节、外链资源（T00–T06，无答案、无长代码）。
+- **[你的代码区](code/README.md)**：自学后把练习与项目放进 `code/`；仓库只保留少量示例与倒立摆包骨架。
