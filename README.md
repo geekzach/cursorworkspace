@@ -21,6 +21,8 @@
 
 更完整的分阶段里程碑、复试 PPT 结构与暂定硬件 BOM 见 **[`docs/ROADMAP.md`](docs/ROADMAP.md)**。
 
+**中文跟读教程**（Week 1 + AI01 + numpy/ODE 直觉）：从 **[`docs/tutorials/README.md`](docs/tutorials/README.md)** 开始，含练习与参考思路。
+
 ---
 
 ## 学习路线概览（按学期）
@@ -132,23 +134,20 @@ python weeks/ai01_nn_dynamics/demo_reference_end2end.py  # 参考答案演示
 .
 ├── README.md                 # 本文件
 ├── docs/
-│   └── ROADMAP.md            # 分阶段路线图、复试 PPT、暂定 BOM
+│   ├── ROADMAP.md            # 分阶段路线图、复试 PPT、暂定 BOM
+│   └── tutorials/            # 中文教程全文（唯一位置；含每日计划与 answers/）
 ├── requirements.txt          # Python 依赖（固定版本）
 ├── sim/
 │   └── mujoco/               # 寒假 MuJoCo 占位（见目录内 README）
 ├── weeks/
-│   ├── week01/               # 第一周教材与练习
+│   ├── week01/               # 主线 Week 1 练习（长文教程在 docs/tutorials/）
+│   │   ├── TUTORIAL.md       # 薄链接入口
 │   │   ├── CHECKLIST.md
-│   │   ├── ex01_syntax.py
-│   │   ├── ex02_functions.py
-│   │   ├── ex03_lists_dicts.py
-│   │   └── hello_sim.py
-│   └── ai01_nn_dynamics/     # 可选：NN 拟合简化摆动力学
-│       ├── README.md
-│       ├── CHECKLIST.md
-│       ├── ex01_preview_rollout.py
-│       ├── ex02_fit_dynamics.py
-│       └── demo_reference_end2end.py
+│   │   └── ex*.py, hello_sim.py
+│   └── ai01_nn_dynamics/     # 可选 AI 支线（教程 docs/tutorials/ 03–04）
+│       ├── TUTORIAL.md
+│       ├── README.md, CHECKLIST.md
+│       └── ex*.py, demo_reference_end2end.py
 └── src/
     ├── learning/             # AI 支线：ODE 数据与 numpy MLP
     └── inverted_pendulum/    # 倒立摆仿真包骨架（大三上逐步实现）

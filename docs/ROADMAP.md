@@ -30,7 +30,8 @@
 | **M1.6**（**AI 支线，可选**） | **轻量 NN 动力学拟合**：用简化摆 ODE 生成 rollout，训练小型 MLP 预测下一状态；对比真值与预测误差 | `weeks/ai01_nn_dynamics/`、`src/learning/`；面试可讲「经典模型 + 数据驱动近似」 |
 
 **与本仓库**：继续按周次填充 `weeks/week0x/` 与 `src/inverted_pendulum/`（`model.py`、`controllers/pid.py`、`simulation.py` 等）。**不要求**本阶段引入 MuJoCo。  
-**AI 支线**与 Week 1–2 **并行**：不替代拉格朗日推导与 PID；完成后更易理解阶段四 **M4** 中「仿真环境 + 学习」的关系（本阶段 **不做 RL**）。
+**AI 支线**与 Week 1–2 **并行**：不替代拉格朗日推导与 PID；完成后更易理解阶段四 **M4** 中「仿真环境 + 学习」的关系（本阶段 **不做 RL**）。  
+**中文跟读教程**（与 Week 1 / AI01 对齐，含每日学习安排）：[`docs/tutorials/README.md`](tutorials/README.md) — 长文仅放在 `docs/tutorials/`，`weeks/*/TUTORIAL.md` 仅为链接入口。
 
 **依赖**：`requirements.txt` 中的 numpy / scipy / matplotlib；后续周次可增加 `python-control`（见 README）。
 
@@ -120,13 +121,14 @@
 ## 仓库目录与阶段对应（规划）
 
 ```text
-weeks/week01/              # 当前：Python 基础（进行中）
-weeks/ai01_nn_dynamics/    # 可选：NN 拟合简化摆一步动力学（大三上 AI 支线）
-weeks/week02/ …            # 大三上：numpy、ODE、建模与 PID
-src/inverted_pendulum/     # 倒立摆仿真包（逐步实现）
-src/learning/              # AI 支线：ODE rollout、numpy MLP 训练辅助
-sim/mujoco/                # 寒假：MuJoCo 模型与 LQR 仿真（占位）
+weeks/week01/              # 主线：Python 基础练习脚本 + CHECKLIST
+weeks/ai01_nn_dynamics/    # AI 支线：NN 拟合一步动力学脚本 + CHECKLIST
+weeks/week02/ …            # 大三上：numpy、ODE、建模与 PID（待添加）
+docs/tutorials/            # 中文教程全文 + answers/（Week1、ODE、AI01）
 docs/ROADMAP.md            # 本文件
+src/inverted_pendulum/     # 倒立摆仿真包（逐步实现）
+src/learning/              # AI 支线库：pendulum、rollout、mlp_numpy
+sim/mujoco/                # 寒假：MuJoCo 占位
 ```
 
 ---
