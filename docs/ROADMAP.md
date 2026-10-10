@@ -3,7 +3,8 @@
 面向 **东南大学 085400 电子信息（专硕）** 复试准备，方向倾向 **具身智能 / 嵌入式控制**。本项目以 **「先仿真、后实物」** 为主线：用倒立摆打好数学与经典控制基础，再在 MuJoCo 中搭建两轮自平衡小车，最后落地 MCU 实物，并可选做强化学习实验与复试答辩材料串联。
 
 > **当前进度（2026 年 10 月）**：仅完成 **Week 1**（`weeks/week01/`）— Python 基础与环境搭建。  
-> MuJoCo、LQR 闭环、实物硬件、强化学习等 **均未实现**；`src/inverted_pendulum/` 仍为包骨架。
+> MuJoCo、LQR 闭环、实物硬件、强化学习等 **均未实现**；`src/inverted_pendulum/` 仍为包骨架。  
+> **校历周次与教程映射**（2026-W42 → 2027-W04）：[`docs/checklists/SEMESTER_PLAN.md`](checklists/SEMESTER_PLAN.md)。
 
 ---
 
@@ -31,7 +32,7 @@
 
 **与本仓库**：继续按周次填充 `weeks/week0x/` 与 `src/inverted_pendulum/`（`model.py`、`controllers/pid.py`、`simulation.py` 等）。**不要求**本阶段引入 MuJoCo。  
 **AI 支线**与 Week 1–2 **并行**：不替代拉格朗日推导与 PID；完成后更易理解阶段四 **M4** 中「仿真环境 + 学习」的关系（本阶段 **不做 RL**）。  
-**中文跟读教程**（与 Week 1 / AI01 对齐，含每日学习安排）：[`docs/tutorials/README.md`](tutorials/README.md) — 长文仅放在 `docs/tutorials/`，`weeks/*/TUTORIAL.md` 仅为链接入口。
+**中文跟读教程**（与 Week 1 / AI01 对齐）：[`docs/tutorials/README.md`](tutorials/README.md) — 长文仅放在 `docs/tutorials/`；可运行脚本见 [`weeks/README.md`](../weeks/README.md)。
 
 **依赖**：`requirements.txt` 中的 numpy / scipy / matplotlib；后续周次可增加 `python-control`（见 README）。
 
@@ -121,6 +122,7 @@
 ## 仓库目录与阶段对应（规划）
 
 ```text
+weeks/README.md            # 练习代码总索引
 weeks/week01/              # 主线：Python 基础练习脚本 + CHECKLIST
 weeks/ai01/                 # AI01 练习脚本 + CHECKLIST
 weeks/week02/ …            # 大三上：numpy、ODE、建模与 PID（待添加）

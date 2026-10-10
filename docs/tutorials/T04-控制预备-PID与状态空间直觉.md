@@ -19,7 +19,8 @@ T02 一阶阶跃 → T03 开环 ODE → 本章 PID 闭环 → 线性化 A,B → 
 
 1. 每节 **先跑代码**（可用纯 Python float，再迁 NumPy）。  
 2. 标 ⭐ 必做；🔶 进阶。  
-3. 离散 PID 建议用 **类**（与 T01b 一致），不要每步 `new PID()`。
+3. 离散 PID 建议用 **类**（与 T01b 一致），不要每步 `new PID()`。  
+4. 思路核对：[`answers/05_pid_state_space.md`](answers/05_pid_state_space.md)。
 
 **本章结束时你应该能**：画闭环框图；实现带限幅的离散 PID；对质量–弹簧做 P/PD 闭环并画 `q(t)`；解释 \(\theta=0\) 平衡点与 \(A,B\) 含义。
 
@@ -151,7 +152,7 @@ class PID:
         self.integral += error * dt
         d_error = (error - self.prev_error) / dt if dt > 0 else 0.0
         u_raw = self.Kp * error + self.Ki * self.integral + self.Kd * d_error
-        u = max(self.u_min, min(self.u_max, u))
+        u = max(self.u_min, min(self.u_max, u_raw))
         self.prev_error = error
         return u
 ```
@@ -286,7 +287,7 @@ B = np.array([[0], [1/m]])
 
 ### 4.7.3 cart-pole 预览（4 维）
 
-\(x=[x,\dot{x},\theta,\dot{\theta}]^\top\)。**线性化**在 \(\theta=0\) 附近：
+\(x=[p,\dot{p},\theta,\dot{\theta}]^\top\)（\(p\) 为小车位置）。**线性化**在 \(\theta=0\) 附近：
 
 \[
 \delta\dot{x} \approx A\,\delta x + B\,\delta u
@@ -438,9 +439,9 @@ print("A_num\n", A_num)
 
 | 信号 | 来源 | 仿真里常当作 |
 |------|------|----------------|
-| \(\theta\) | IMU 融合 | `state[2]` |
+| \(\theta\) | IMU 融合 | `state[2]`（若 \(x=[p,\dot p,\theta,\dot\theta]\)） |
 | \(\dot{\theta}\) | 陀螺仪 | `state[3]` |
-| \(\dot{x}\) | 编码器微分 | `state[1]` |
+| \(\dot{p}\) | 编码器微分 | `state[1]` |
 
 闭环时 **你能测什么就反馈什么**；不能测的状态需要观测器（超纲，仅知道名词）。
 

@@ -2,7 +2,7 @@
 
 **完整教程序列只在本目录**（`docs/tutorials/`）。  
 **本周打卡**（读哪几章、每日单词、每周听力固定槽）→ [`docs/checklists/`](../checklists/)（如 [`2026-W42.md`](../checklists/2026-W42.md)）。  
-**跑代码** → `weeks/week01/`、`weeks/ai01/` + `src/`；`weeks/*/TUTORIAL.md` 仅为链接入口。
+**跑代码** → [`weeks/README.md`](../../weeks/README.md)（`week01/`、`ai01/`）+ `src/`。
 
 ---
 
@@ -58,7 +58,7 @@ Python / NumPy（T01–T02）
 
 | ID | 章节 | 练习代码 |
 |----|------|----------|
-| **T00** | [导读与环境](T00-导读与环境.md) | 根目录 `README.md` 环境段 |
+| **T00** | [导读与环境](T00-导读与环境.md) | [T00 §0.3](T00-导读与环境.md#env-setup) |
 | **T01** | [Python 语言基础](T01-Python语言基础.md)（含 §1.14 类与对象） | `weeks/week01/ex01`–`ex03` |
 | **T01b** | [类与对象入门加练](T01b-类与对象入门.md)（闭环 PID + 一阶 plant） | 自写 `my_pid_lab.py` |
 | **T02** | [NumPy 与 Matplotlib](T02-NumPy与Matplotlib.md) | `weeks/week01/hello_sim.py` |
@@ -81,6 +81,7 @@ Python / NumPy（T01–T02）
 |--------|------|
 | 学完整教程 | 本目录 T00 起按 ID 读 |
 | 本周读哪几章（如 **T00–T02**） | 当周 [`docs/checklists/YYYY-Www.md`](../checklists/) 顶部「本周教程」行 |
+| 学期周次总表（W42–W04） | [`docs/checklists/SEMESTER_PLAN.md`](../checklists/SEMESTER_PLAN.md) |
 | 大纲周次 ↔ 章节 ID 对照 | [`docs/checklists/CURRICULUM.md`](../checklists/CURRICULUM.md) |
 | 课表、**CET-6 每日单词**、**每周听力固定槽**、周日复盘 | 同上 ISO 周文件或 [`WEEKLY_TEMPLATE.md`](../checklists/WEEKLY_TEMPLATE.md) |
 
@@ -90,7 +91,7 @@ Python / NumPy（T01–T02）
 
 ## 仓库分工
 
-完整目录树见根目录 [`README.md` §仓库结构](../../README.md#repo-tree)。本教程对应练习入口：[`weeks/week01/TUTORIAL.md`](../../weeks/week01/TUTORIAL.md) · [`weeks/ai01/TUTORIAL.md`](../../weeks/ai01/TUTORIAL.md)
+仓库入口见根目录 [`README.md`](../../README.md)；练习脚本索引 [`weeks/README.md`](../../weeks/README.md)。
 
 ---
 
