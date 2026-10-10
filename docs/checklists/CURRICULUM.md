@@ -10,7 +10,7 @@
 | Week 3 | **T04**（§4.1–4.2） | `controllers/pid.py` |
 | Week 4 | **T03–T04** | `model.py` |
 | Week 5 | **T04** + ROADMAP LQR | `lqr.py`、`simulation.py` |
-| **AI01**（可选） | **T03 → T05**（须 **T02** 打底） | `weeks/ai01_nn_dynamics/` |
+| **AI01**（可选） | **T03 → T05**（须 **T02** 打底） | `weeks/ai01/` |
 | 寒假及以后 | **T06**（选读）+ ROADMAP 阶段二–四 | `sim/mujoco/`；RL **实现** 在阶段四 |
 
 **AI01 最低前置**：能读 NumPy 形状、跑通 rollout、理解 train/val 与过拟合（T05 §5.2）— 与 [ML 基础路线](https://www.arjunvirk.com/writing/ml-guide) 的「先 classical / NN 数学，再工程堆栈」一致。

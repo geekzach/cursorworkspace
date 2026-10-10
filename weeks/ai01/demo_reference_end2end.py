@@ -6,7 +6,7 @@
 
 运行（项目根目录）：
     export PYTHONPATH="$(pwd)/src"
-    python weeks/ai01_nn_dynamics/demo_reference_end2end.py
+    python weeks/ai01/demo_reference_end2end.py
 """
 
 from __future__ import annotations
@@ -22,8 +22,8 @@ if _SRC not in sys.path:
 import numpy as np
 import matplotlib.pyplot as plt
 
-from learning.mlp_numpy import MLP, evaluate_mse, train_epoch
-from learning.rollout import generate_dataset, train_val_split
+from ai01.mlp_numpy import MLP, evaluate_mse, train_epoch
+from ai01.rollout import generate_dataset, train_val_split
 
 
 def main() -> None:

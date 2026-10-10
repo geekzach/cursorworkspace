@@ -6,7 +6,7 @@ AI01 预习：用「真实」摆 ODE 生成一条 rollout 并画图。
 
 运行（项目根目录）：
     export PYTHONPATH="$(pwd)/src"
-    python weeks/ai01_nn_dynamics/ex01_preview_rollout.py
+    python weeks/ai01/ex01_preview_rollout.py
 """
 
 from __future__ import annotations
@@ -23,7 +23,7 @@ if _SRC not in sys.path:
 import numpy as np
 import matplotlib.pyplot as plt
 
-from learning.pendulum import PendulumParams, rk4_step
+from ai01.pendulum import PendulumParams, rk4_step
 
 
 def main() -> None:

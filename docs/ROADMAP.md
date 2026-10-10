@@ -27,7 +27,7 @@
 | M1.3 | 工作点线性化、开环仿真 | 状态曲线图（角度、角速度等） |
 | M1.4 | PID（或 PD）在简化模型上整定 | 阶跃/扰动响应对比图 |
 | M1.5 | 能口头说明：**倒立摆 ≈ 平衡车在「轮轴为支点」的等效模型** | 复试用「从摆到车」一页示意图 |
-| **M1.6**（**AI 支线，可选**） | **轻量 NN 动力学拟合**：用简化摆 ODE 生成 rollout，训练小型 MLP 预测下一状态；对比真值与预测误差 | `weeks/ai01_nn_dynamics/`、`src/learning/`；面试可讲「经典模型 + 数据驱动近似」 |
+| **M1.6**（**AI 支线，可选**） | **轻量 NN 动力学拟合**：用简化摆 ODE 生成 rollout，训练小型 MLP 预测下一状态；对比真值与预测误差 | `weeks/ai01/`、`src/ai01/`；面试可讲「经典模型 + 数据驱动近似」 |
 
 **与本仓库**：继续按周次填充 `weeks/week0x/` 与 `src/inverted_pendulum/`（`model.py`、`controllers/pid.py`、`simulation.py` 等）。**不要求**本阶段引入 MuJoCo。  
 **AI 支线**与 Week 1–2 **并行**：不替代拉格朗日推导与 PID；完成后更易理解阶段四 **M4** 中「仿真环境 + 学习」的关系（本阶段 **不做 RL**）。  
@@ -122,13 +122,13 @@
 
 ```text
 weeks/week01/              # 主线：Python 基础练习脚本 + CHECKLIST
-weeks/ai01_nn_dynamics/    # AI 支线：NN 拟合一步动力学脚本 + CHECKLIST
+weeks/ai01/                 # AI01 练习脚本 + CHECKLIST
 weeks/week02/ …            # 大三上：numpy、ODE、建模与 PID（待添加）
 docs/tutorials/            # 总教程 T00–T06 + answers/
 docs/checklists/           # 校历周清单（本周 T 章节 ID + CET-6 每日单词）
 docs/ROADMAP.md            # 本文件
 src/inverted_pendulum/     # 倒立摆仿真包（逐步实现）
-src/learning/              # AI 支线库：pendulum、rollout、mlp_numpy
+src/ai01/                   # AI01 库：pendulum、rollout、mlp_numpy
 sim/mujoco/                # 寒假：MuJoCo 占位
 ```
 

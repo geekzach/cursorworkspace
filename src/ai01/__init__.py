@@ -1,8 +1,7 @@
 """
-轻量「学习」辅助模块（大三上 AI 支线）。
+AI01 支线库：简化摆 ODE、rollout 数据集、NumPy MLP。
 
-与经典 PID / 建模并列：用神经网络拟合简单动力学，为后续阶段四 RL 打底。
-当前仅依赖 numpy；不引入 PyTorch / 强化学习框架。
+与经典 PID / 建模并列，为后续 ROADMAP 阶段四 RL 打底；仅依赖 numpy。
 """
 
 from .pendulum import PendulumParams, pendulum_deriv, rk4_step

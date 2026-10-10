@@ -23,8 +23,8 @@
 
 ## 对照与扩展
 
-- [ ] 浏览 `src/learning/mlp_numpy.py` 中 `forward` / `backward`（不要求手写推导，能指认链式法则即可）
-- [ ] 至少完成 README 中 **一项 DIY**（噪声 / 样本数 / 预测加速度）
+- [ ] 浏览 `src/ai01/mlp_numpy.py` 中 `forward` / `backward`（不要求手写推导，能指认链式法则即可）
+- [ ] 至少完成 [`TUTORIAL.md`](TUTORIAL.md) 中 **一项 DIY**（噪声 / 样本数 / 预测加速度）
 - [ ] （可选）运行 `demo_reference_end2end.py`，只改参数做对比实验，**不复制粘贴交作业**
 
 ## 与复试叙事
