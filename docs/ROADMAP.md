@@ -125,7 +125,7 @@
 weeks/README.md            # 练习代码总索引
 weeks/week01/              # 主线：Python 基础练习脚本 + CHECKLIST
 weeks/ai01/                 # AI01 练习脚本 + CHECKLIST
-weeks/week02/ …            # 大三上：numpy、ODE、建模与 PID（待添加）
+weeks/week02/              # 大三上 Week 2 占位（README + CHECKLIST；练习脚本待定）
 docs/tutorials/            # 总教程 T00–T06 + answers/
 docs/checklists/           # 校历周清单（本周 T 章节 ID + CET-6 每日单词）
 docs/ROADMAP.md            # 本文件

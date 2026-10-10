@@ -65,10 +65,18 @@ python weeks/ai01/demo_reference_end2end.py
 
 ---
 
+## week02 · 大纲 Week 2（占位）
+
+**教程**：**T02** 巩固 + **T03** ODE（见 [`week02/README.md`](week02/README.md)）。练习脚本 **待添加**；现阶段可跑 `ai01/ex01` 或按 T03 自建 `msd_ode.py`。
+
+自查 stub：[`week02/CHECKLIST.md`](week02/CHECKLIST.md)
+
+---
+
 ## 后续周次（规划）
 
 | 目录 | 状态 |
 |------|------|
-| `week02/` … | 大三上逐步添加（见 [`CURRICULUM.md`](../docs/checklists/CURRICULUM.md)） |
+| `week03/` … | 大三上逐步添加（见 [`CURRICULUM.md`](../docs/checklists/CURRICULUM.md)） |
 
 倒立摆仿真包：[`src/inverted_pendulum/`](../src/inverted_pendulum/) · 寒假 MuJoCo 占位：[`sim/mujoco/`](../sim/mujoco/README.md)

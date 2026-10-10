@@ -20,4 +20,4 @@
 - [ ] 完成 [T01](../../docs/tutorials/T01-Python语言基础.md)、[T02](../../docs/tutorials/T02-NumPy与Matplotlib.md) 文末 **必做**
 - [ ] 浏览 `src/inverted_pendulum/` 骨架
 
-**下一大纲周**：Week 2 · 教程 **T02–T03** · 见 [`CURRICULUM.md`](../../docs/checklists/CURRICULUM.md)
+**下一大纲周**：[`week02/`](../week02/README.md) · 教程 **T02–T03** · 见 [`CURRICULUM.md`](../../docs/checklists/CURRICULUM.md)
