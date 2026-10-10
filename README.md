@@ -6,9 +6,9 @@
 
 | 去哪 | 链接 | 说明 |
 |------|------|------|
-| **学教程** | [`docs/tutorials/`](docs/tutorials/README.md) | 目标 / 书目 / 要点（**无长代码**） |
-| **本周打卡** | [`docs/checklists/`](docs/checklists/) | [`SEMESTER_PLAN.md`](docs/checklists/SEMESTER_PLAN.md) · 当周 `YYYY-MM-DD.md` |
-| **跑代码** | [`weeks/`](weeks/README.md) · [`src/`](src/) | `examples` → `exercises` → `answers` |
+| **学教程** | [`docs/tutorials/`](docs/tutorials/README.md) | **知识点** + **书目**（T00–T06；无长代码） |
+| **本周打卡** | [`docs/checklists/`](docs/checklists/README.md) | **日期计划**：[`SEMESTER_PLAN.md`](docs/checklists/SEMESTER_PLAN.md)（`2026-10-12` 起）· 当周 **`YYYY-MM-DD.md`**（周一）· 寒假 AI → [`winter-ai.md`](docs/checklists/winter-ai.md) |
+| **跑代码** | [`weeks/`](weeks/README.md) · [`src/`](src/) | 每周 **`examples` → `exercises` → `answers`**（本学期 `week01` / `week02`；寒假 `ai01`） |
 
 **路线图** [`docs/ROADMAP.md`](docs/ROADMAP.md) · **周日 20:30** 复盘。
 

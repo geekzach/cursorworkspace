@@ -8,6 +8,6 @@
 | **T02** | [`weeks/week01/answers/02_numpy_matplotlib.md`](../../weeks/week01/answers/02_numpy_matplotlib.md) |
 | **T03** | [`weeks/week02/answers/03_ode_intuition.md`](../../weeks/week02/answers/03_ode_intuition.md) |
 | **T04** | [`weeks/week03/answers/05_pid_state_space.md`](../../weeks/week03/answers/05_pid_state_space.md) |
-| **T05（寒假）** | [`weeks/ai01/answers/04_nn_dynamics_fit.md`](../../weeks/ai01/answers/04_nn_dynamics_fit.md) |
+| **T05（寒假）** | [`winter-ai.md`](../../checklists/winter-ai.md) · [`weeks/ai01/answers/04_nn_dynamics_fit.md`](../../weeks/ai01/answers/04_nn_dynamics_fit.md) |
 
 教程正文：[`docs/tutorials/README.md`](../README.md)
