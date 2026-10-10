@@ -45,8 +45,9 @@ Python 是动态类型语言：名字绑定到对象。
 
 函数把「输入 → 输出」封装起来，便于测试。
 
-阅读 `weeks/week01/ex02_functions.py`，关注：
+阅读 [`weeks/week01/ex02_functions.py`](../../weeks/week01/ex02_functions.py)，关注：
 
+- `clamp`：输出限幅，对应电机力矩饱和  
 - 参数与返回值  
 - 默认参数（例如仿真步长 `dt=0.001`）  
 - 文档字符串 `"""..."""`（复试笔记里可引用）

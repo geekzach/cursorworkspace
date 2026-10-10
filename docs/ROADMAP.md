@@ -27,8 +27,11 @@
 | M1.3 | 工作点线性化、开环仿真 | 状态曲线图（角度、角速度等） |
 | M1.4 | PID（或 PD）在简化模型上整定 | 阶跃/扰动响应对比图 |
 | M1.5 | 能口头说明：**倒立摆 ≈ 平衡车在「轮轴为支点」的等效模型** | 复试用「从摆到车」一页示意图 |
+| **M1.6**（**AI 支线，可选**） | **轻量 NN 动力学拟合**：用简化摆 ODE 生成 rollout，训练小型 MLP 预测下一状态；对比真值与预测误差 | `weeks/ai01_nn_dynamics/`、`src/learning/`；面试可讲「经典模型 + 数据驱动近似」 |
 
-**与本仓库**：继续按周次填充 `weeks/week0x/` 与 `src/inverted_pendulum/`（`model.py`、`controllers/pid.py`、`simulation.py` 等）。**不要求**本阶段引入 MuJoCo。
+**与本仓库**：继续按周次填充 `weeks/week0x/` 与 `src/inverted_pendulum/`（`model.py`、`controllers/pid.py`、`simulation.py` 等）。**不要求**本阶段引入 MuJoCo。  
+**AI 支线**与 Week 1–2 **并行**：不替代拉格朗日推导与 PID；完成后更易理解阶段四 **M4** 中「仿真环境 + 学习」的关系（本阶段 **不做 RL**）。  
+**中文跟读教程**（与 Week 1 / AI01 对齐，含每日学习安排）：[`docs/tutorials/README.md`](tutorials/README.md) — 长文仅放在 `docs/tutorials/`，`weeks/*/TUTORIAL.md` 仅为链接入口。
 
 **依赖**：`requirements.txt` 中的 numpy / scipy / matplotlib；后续周次可增加 `python-control`（见 README）。
 
@@ -72,7 +75,7 @@
 
 | 里程碑 | 内容 | 产出物（建议） |
 |--------|------|----------------|
-| M4.1 | 定义状态、动作、奖励（倾角、角速度、力矩惩罚等） | 奖励函数公式与 ablation 笔记 |
+| M4.1 | 定义状态、动作、奖励（倾角、角速度、力矩惩罚等） | 奖励函数公式与 ablation 笔记；可回顾阶段一 **M1.6** 的「一步动力学拟合」与闭环 RL 的差异 |
 | M4.2 | 训练简单策略（如 PPO / 小型 MLP），能短时平衡 | 训练曲线、策略 rollout 视频 |
 | M4.3 | 与 LQR 对比：鲁棒性、调参成本、可解释性 | 复试「经典 vs 学习」讨论要点 |
 | M4.4 | 可选：Sim-to-real 讨论（不强制上实物 RL） | 文献 1–2 篇读后感 |
@@ -118,11 +121,15 @@
 ## 仓库目录与阶段对应（规划）
 
 ```text
-weeks/week01/              # 当前：Python 基础（进行中）
-weeks/week02/ …            # 大三上：numpy、ODE、建模与 PID
-src/inverted_pendulum/     # 倒立摆仿真包（逐步实现）
-sim/mujoco/                # 寒假：MuJoCo 模型与 LQR 仿真（占位）
+weeks/week01/              # 主线：Python 基础练习脚本 + CHECKLIST
+weeks/ai01_nn_dynamics/    # AI 支线：NN 拟合一步动力学脚本 + CHECKLIST
+weeks/week02/ …            # 大三上：numpy、ODE、建模与 PID（待添加）
+docs/tutorials/            # 总教程 T00–T06 + answers/
+docs/checklists/           # 校历周清单（本周 T 章节 ID + CET-6 每日单词）
 docs/ROADMAP.md            # 本文件
+src/inverted_pendulum/     # 倒立摆仿真包（逐步实现）
+src/learning/              # AI 支线库：pendulum、rollout、mlp_numpy
+sim/mujoco/                # 寒假：MuJoCo 占位
 ```
 
 ---
