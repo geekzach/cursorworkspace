@@ -59,7 +59,8 @@ Python / NumPy（T01–T02）
 | ID | 章节 | 练习代码 |
 |----|------|----------|
 | **T00** | [导读与环境](T00-导读与环境.md) | 根目录 `README.md` 环境段 |
-| **T01** | [Python 语言基础](T01-Python语言基础.md) | `weeks/week01/ex01`–`ex03` |
+| **T01** | [Python 语言基础](T01-Python语言基础.md)（含 §1.14 类与对象） | `weeks/week01/ex01`–`ex03` |
+| **T01b** | [类与对象入门加练](T01b-类与对象入门.md)（闭环 PID + 一阶 plant） | 自写 `my_pid_lab.py` |
 | **T02** | [NumPy 与 Matplotlib](T02-NumPy与Matplotlib.md) | `weeks/week01/hello_sim.py` |
 | **T03** | [常微分方程与仿真直觉](T03-常微分方程与仿真直觉.md) | `weeks/ai01/ex01_preview_rollout.py` |
 | **T04** | [控制预备：PID 与状态空间直觉](T04-控制预备-PID与状态空间直觉.md) | `src/inverted_pendulum/`（逐步实现） |

@@ -17,7 +17,7 @@
 
 对照外部资料时，以 [Python 官方教程（中文）](https://docs.python.org/zh-cn/3/tutorial/) 第 1–5 章为主；本章把**和控制/仿真相关**的例子写密一些。
 
-**本章结束时你应该能**：解释 `ex01`–`ex03` 每一段在干什么；自己写 `clamp`、循环累加、参数字典；为 T02 的 NumPy 数组打底。
+**本章结束时你应该能**：解释 `ex01`–`ex03` 每一段在干什么；自己写 `clamp`、循环累加、参数字典；**能读会写简单的 `class`（如 `PID` 控制器对象）**；为 T02 的 NumPy 数组打底。类与对象的**加练**见 [T01b · 类与对象入门](T01b-类与对象入门.md)。
 
 ---
 
@@ -502,7 +502,205 @@ for key, value in params.items():
 
 ---
 
-## 1.14 元组 tuple、集合 set（了解）
+## 1.14 类与对象（够用版：读懂 `PID` 类）
+
+函数把**一次计算**包起来；**类**把 **数据 + 多步操作** 绑在同一个名字下。后面 T04 的离散 PID、`src/inverted_pendulum/controllers/pid.py` 都会用 **「控制器对象」** 在仿真循环里反复调用 `step(...)`。
+
+**本节不讲**继承、多态、设计模式——只学到能写 **30–60 行** 的实用类。
+
+### 1.14.1 对象是什么（直觉）
+
+- **类（class）**：图纸，例如「PID 控制器」。  
+- **对象（instance）**：按图纸造出来的一个具体控制器，有自己的 `Kp`、内部积分状态。  
+- **属性（attribute）**：挂在对象上的变量，如 `self.integral`。  
+- **方法（method）**：挂在对象上的函数，第一个参数通常是 `self`（指「这个对象自己」）。
+
+```python
+class MotorLimit:
+    """示例：只存上下限，并提供限幅方法。"""
+
+    def __init__(self, u_min: float, u_max: float) -> None:
+        self.u_min = u_min
+        self.u_max = u_max
+
+    def clamp(self, u: float) -> float:
+        if u < self.u_min:
+            return self.u_min
+        if u > self.u_max:
+            return self.u_max
+        return u
+
+
+lim = MotorLimit(-10.0, 10.0)   # 构造对象
+print(lim.clamp(15.0))          # 10.0
+print(lim.clamp(-20.0))         # -10.0
+```
+
+**练习 ⭐**：把上限改成 `5.0`，对 `u=3` 和 `u=8` 各调用 `clamp`，口述结果。
+
+### 1.14.2 构造函数 `__init__`
+
+`__init__` 在 **创建对象时自动调用**，用来初始化属性：
+
+```python
+class POnly:
+    def __init__(self, Kp: float) -> None:
+        self.Kp = Kp
+
+    def compute(self, error: float) -> float:
+        return self.Kp * error
+
+
+ctrl = POnly(Kp=2.0)
+u = ctrl.compute(error=0.1)   # 0.2
+print(u)
+```
+
+**常见错误 vs 推荐**
+
+```python
+# ❌ 忘记 self.
+# def compute(error):
+#     return Kp * error
+
+# ✅ 实例属性必须 self.Kp
+# def compute(self, error):
+#     return self.Kp * error
+
+# ❌ 用类名当对象调用实例方法
+# POnly.compute(0.1)
+# ✅ 先 ctrl = POnly(2.0)，再 ctrl.compute(0.1)
+```
+
+### 1.14.3 离散 PID 类（与 T04 同款结构）
+
+下面是一个 **可放进仿真循环** 的极简 PID；T04 会在此基础上加抗积分饱和等细节。
+
+```python
+class PID:
+    def __init__(
+        self,
+        Kp: float,
+        Ki: float,
+        Kd: float,
+        u_min: float = -10.0,
+        u_max: float = 10.0,
+    ) -> None:
+        self.Kp, self.Ki, self.Kd = Kp, Ki, Kd
+        self.u_min, self.u_max = u_min, u_max
+        self.integral = 0.0
+        self.prev_error = 0.0
+
+    def reset(self) -> None:
+        """换一条轨迹或重新仿真前清零内部状态。"""
+        self.integral = 0.0
+        self.prev_error = 0.0
+
+    def step(self, error: float, dt: float) -> float:
+        self.integral += error * dt
+        d_error = (error - self.prev_error) / dt if dt > 0 else 0.0
+        u = self.Kp * error + self.Ki * self.integral + self.Kd * d_error
+        u = max(self.u_min, min(self.u_max, u))
+        self.prev_error = error
+        return u
+
+
+pid = PID(Kp=1.0, Ki=0.0, Kd=0.1)
+dt = 0.01
+for e in (0.1, 0.08, 0.05):
+    print("e=", e, "u=", pid.step(e, dt))
+```
+
+**练习 ⭐**：`Kp=2, Ki=0, Kd=0`，只对 `e=0.1` 调一次 `step`，手算 `u` 再运行核对。  
+**练习 ⭐**：连续调用 `step` 三次后调用 `reset()`，再 `step` 一次，说明 `integral` 为何要从 0 重新开始。
+
+### 1.14.4 小系统类：把状态包起来
+
+用类保存 **状态向量** 和 **一步更新**，比散落的全局变量清晰（仍用纯 Python float，T03 再换 NumPy）。
+
+```python
+class FirstOrderSystem:
+    """dy/dt = (K - y) / tau  —— 与 T02 阶跃响应同一族。"""
+
+    def __init__(self, tau: float, K: float, y0: float = 0.0) -> None:
+        self.tau = tau
+        self.K = K
+        self.y = y0
+
+    def step(self, dt: float, u: float = 0.0) -> float:
+        """u 可选：把输入看成对 K 的扰动（示意用）。"""
+        target = self.K + u
+        self.y += dt * (target - self.y) / self.tau
+        return self.y
+
+
+plant = FirstOrderSystem(tau=0.5, K=1.0, y0=0.0)
+pid = PID(Kp=0.8, Ki=0.2, Kd=0.0, u_min=-2.0, u_max=2.0)
+dt = 0.05
+r = 1.0
+for k in range(30):
+    e = r - plant.y
+    u = pid.step(e, dt)
+    y = plant.step(dt, u=0.0)   # 本例 plant 未接 u，仅演示两类对象协作
+    if k % 10 == 0:
+        print(f"k={k} y={y:.3f} u={u:.3f}")
+```
+
+**说明**：上例 `plant.step` 未真正把 `u` 接入动力学，只为展示 **两个对象在循环里分工**。完整闭环在 T03–T04 用正确的 \(f(x,u)\) 实现；加练见 [T01b](T01b-类与对象入门.md)。
+
+### 1.14.5 `self` 到底是什么
+
+```python
+class Demo:
+    def __init__(self, value: int) -> None:
+        self.value = value
+
+    def show(self) -> None:
+        print("self is", self, "value=", self.value)
+
+
+a = Demo(1)
+b = Demo(2)
+a.show()
+b.show()   # 两个对象各自一份 self.value
+```
+
+`self` 只是约定俗成的名字（必须占第一个参数位）；调用 `a.show()` 时 Python 自动把 `a` 传给 `self`。
+
+### 1.14.6 类 vs 字典 vs 函数（怎么选）
+
+| 方式 | 适合 |
+|------|------|
+| 函数 + 全局变量 | 极短草稿（易乱） |
+| `dict` 存 `Kp,Ki,Kd` + 函数 | 参数表、配置 |
+| **class** | 有 **内部状态** 要跨多步保留（积分、上一拍误差） |
+
+`ex03` 的 `params` 字典仍然有用：**类里也可以引用 dict** 存物理常数。
+
+### 1.14.7 常见错误 vs 推荐（汇总）
+
+```python
+# ❌ 在类外直接改未定义的属性
+# pid.integral = 0   # 若 pid 没有先 __init__ 会怪
+
+# ❌ step 里忘记更新 prev_error / integral
+
+# ❌ 每个时间步 new PID(...) —— 积分永远累加不上
+# ✅ 循环外 pid = PID(...)，循环内 pid.step(...)
+
+# ✅ 仿真重跑前 pid.reset()
+```
+
+### 1.14.8 本节练习（必做）
+
+**练习 ⭐ A**：给 `MotorLimit` 增加方法 `is_saturated(u)`，当 `u` 被限幅时返回 `True`。  
+**练习 ⭐ B**：给 `PID` 增加只读属性效果：在 `step` 后能用 `pid.integral` 打印当前积分。  
+**练习 ⭐ C**：写 `class SimClock`，`__init__(dt)`，`tick()` 每次 `self.t += dt` 并返回 `self.t`。  
+**练习 🔶 D**：阅读 `src/inverted_pendulum/controllers/pid.py` 骨架，找出将来会对应 `step` 的函数名（可尚未实现）。
+
+---
+
+## 1.15 元组 tuple、集合 set（了解）
 
 ```python
 state_names = ("x", "x_dot", "theta", "theta_dot")  # 不可变，可当「常量配置」
@@ -513,7 +711,7 @@ unique_ids = {1, 2, 2, 3}   # {1, 2, 3}
 
 ---
 
-## 1.15 模块与 `if __name__ == "__main__"`
+## 1.16 模块与 `if __name__ == "__main__"`
 
 `ex02` / `ex03` 末尾：
 
@@ -531,7 +729,7 @@ if __name__ == "__main__":
 
 ---
 
-## 1.16 读错信息：异常与调试
+## 1.17 读错信息：异常与调试
 
 ```python
 try:
@@ -554,7 +752,7 @@ except ValueError as err:
 
 ---
 
-## 1.17 与仓库脚本逐段对照
+## 1.18 与仓库脚本逐段对照
 
 ### ex01_syntax.py
 
@@ -585,7 +783,7 @@ except ValueError as err:
 
 ---
 
-## 1.18 渐进式综合练习（像作业一样做）
+## 1.19 渐进式综合练习（像作业一样做）
 
 ### 第 1 组：热身 ⭐
 
@@ -604,7 +802,13 @@ except ValueError as err:
 1. `params` 字典存 `m, L, g`，函数 `gravity_pendulum_accel(theta)` 返回 `-g/L*sin(theta)` 的**小角度近似** `-g/L*theta`（先用近似）。  
 2. 用列表存 10 步 `theta`，每步用上述加速度 + 朴素欧拉更新（预习 T03）。
 
-### 第 4 组：小项目 🔶
+### 第 4 组：类与对象 ⭐
+
+1. 完成 §1.14.8 练习 A、B、C。  
+2. 用 `PID` + `FirstOrderSystem` 跑 50 步闭环（需按 [T01b](T01b-类与对象入门.md) 把 `u` 接入 plant，或自己改 `step`）。  
+3. 在笔记里写 3 行：`class` 相比「函数+全局变量」的好处。
+
+### 第 5 组：小项目 🔶
 
 新建 `weeks/week01/my_week1_mini_sim.py`（可不提交）：
 
@@ -616,7 +820,7 @@ except ValueError as err:
 
 ---
 
-## 1.19 自测清单（章末）
+## 1.20 自测清单（章末）
 
 能 **口头或笔头** 回答即过关：
 
@@ -624,7 +828,9 @@ except ValueError as err:
 2. `clamp(15,-10,10)` 等于多少？为什么控制需要它？  
 3. list 和 dict 分别适合存什么？  
 4. 为什么 `0.1+0.2==0.3` 可能为 False？  
-5. `if __name__ == "__main__"` 解决什么问题？
+5. `if __name__ == "__main__"` 解决什么问题？  
+6. `__init__` 何时调用？`self` 是什么？  
+7. 为什么仿真循环里不要每步 `PID(...)` 新建对象？
 
 ---
 
@@ -632,7 +838,7 @@ except ValueError as err:
 
 - [ ] 通读本章并完成 **所有标 ⭐ 的练习**（至少 10 处）。  
 - [ ] 运行并修改 `ex01`–`ex03`，每文件至少改 1 处变量并预测输出。  
-- [ ] 完成 **第 1、2 组**综合练习。  
+- [ ] 完成 **第 1、2、4 组**综合练习（含 §1.14 类与对象）。  
 - [ ] 在当周 checklist 写一句：你今天独立写出的一段代码是什么。
 
 ## 选做
