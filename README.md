@@ -6,13 +6,13 @@
 
 ## 一眼看懂（三件事）
 
-| | 打开什么 | 说明 |
-|---|----------|------|
+| | 去哪 | 说明 |
+|---|------|------|
 | **学教程** | [`docs/tutorials/`](docs/tutorials/README.md) | 中文长文 **T00–T06**（只在这里读全文） |
-| **周打卡** | [`docs/checklists/`](docs/checklists/) | 校历周：本周 **T 章节 ID**、课表、**CET-6 每日单词**、复盘 |
-| **代码练习** | [`weeks/`](weeks/week01/) | 可运行脚本；`TUTORIAL.md` / `CHECKLIST.md` 链回教程，不重复正文 |
+| **本周打卡** | [`docs/checklists/`](docs/checklists/) | 校历周 `YYYY-Www.md`：课表、**CET-6 每日单词**、**每周 2–3 次听力固定槽**、复盘 |
+| **跑代码** | [`weeks/`](weeks/week01/) · [`src/`](src/inverted_pendulum/) | 练习脚本在 `weeks/`；倒立摆 / AI01 库在 `src/inverted_pendulum/`、`src/ai01/` |
 
-路线图 [`docs/ROADMAP.md`](docs/ROADMAP.md) · 思路核对 [`docs/tutorials/answers/`](docs/tutorials/answers/) · **周日 20:30** 用当周 `YYYY-Www.md` 复盘。
+路线图 [`docs/ROADMAP.md`](docs/ROADMAP.md) · 思路核对 [`docs/tutorials/answers/`](docs/tutorials/answers/) · **周日 20:30** 打开当周校历文件复盘。
 
 > **当前进度**：**Week 1**（`weeks/week01/`）。**可选 AI01**（`weeks/ai01/` + `src/ai01/`，ROADMAP **M1.6**）。  
 > 倒立摆完整闭环、MuJoCo、LQR 实物、强化学习 **尚未实现**；`src/inverted_pendulum/` 为骨架，`sim/mujoco/` 为寒假占位。

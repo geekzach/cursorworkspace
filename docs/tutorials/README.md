@@ -1,8 +1,8 @@
 # 总教程 · Python + 控制 + AI（两轮自平衡 / 倒立摆）
 
 **完整教程序列只在本目录**（`docs/tutorials/`）。  
-**本周读哪几章、每天 CET-6 单词块** → [`docs/checklists/`](../checklists/)（如 [`2026-W42.md`](../checklists/2026-W42.md)）。  
-**可运行练习** → `weeks/week01/`、`weeks/ai01/`；`weeks/*/TUTORIAL.md` 仅为链接入口。
+**本周打卡**（读哪几章、每日单词、每周听力固定槽）→ [`docs/checklists/`](../checklists/)（如 [`2026-W42.md`](../checklists/2026-W42.md)）。  
+**跑代码** → `weeks/week01/`、`weeks/ai01/` + `src/`；`weeks/*/TUTORIAL.md` 仅为链接入口。
 
 ---
 
@@ -50,7 +50,7 @@ Python / NumPy（T01–T02）
 | AI01：**仿真生成标签 → NumPy MLP 拟合动力学**（系统 ID 思想） | MuJoCo 安装、PPO 训练实现（见 ROADMAP 寒假后） |
 | 与平衡车/倒立摆相关的复试叙事挂钩 | 替代本校自控/数学课的系统学习 |
 
-周打卡 [`docs/checklists/`](../checklists/) 的 **「本周教程 ID」** 必须落在上表 **覆盖** 列；若本周忙，用 **T00–T02** 保底，**不要**为了「赶 AI」跳过 ODE 与经典控制主线。
+本周打卡 [`docs/checklists/`](../checklists/) 的 **「本周教程 ID」** 必须落在上表 **覆盖** 列；若本周忙，用 **T00–T02** 保底，**不要**为了「赶 AI」跳过 ODE 与经典控制主线。
 
 ---
 
