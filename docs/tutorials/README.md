@@ -2,7 +2,7 @@
 
 **完整教程序列只在本目录**（`docs/tutorials/`）。  
 **本周打卡**（读哪几章、每日单词、每周听力固定槽）→ [`docs/checklists/`](../checklists/)（如 [`2026-W42.md`](../checklists/2026-W42.md)）。  
-**跑代码** → [`weeks/README.md`](../../weeks/README.md)（`week01/`、`ai01/`）+ `src/`。
+**跑代码** → [`weeks/README.md`](../../weeks/README.md)（`week01/`、`week02/` 占位、`ai01/`）+ `src/`。
 
 ---
 

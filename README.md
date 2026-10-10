@@ -4,15 +4,15 @@
 
 ## 三个入口
 
-| | 链接 | 说明 |
-|---|------|------|
-| **教程** | [`docs/tutorials/`](docs/tutorials/README.md) | 中文讲义 **T00–T06**、**T01b**；思路核对 [`answers/`](docs/tutorials/answers/) |
-| **校历打卡** | [`docs/checklists/`](docs/checklists/) | [`SEMESTER_PLAN.md`](docs/checklists/SEMESTER_PLAN.md)（2026-W42 起）· 当周 `YYYY-Www.md`（课表、CET-6、复盘） |
-| **代码** | [`weeks/`](weeks/README.md) · [`src/`](src/) | 按周练习脚本；库 `inverted_pendulum/`、`ai01/` |
+| 去哪 | 链接 | 说明 |
+|------|------|------|
+| **学教程** | [`docs/tutorials/`](docs/tutorials/README.md) | 中文讲义 **T00–T06**、**T01b**；思路核对 [`answers/`](docs/tutorials/answers/) |
+| **本周打卡** | [`docs/checklists/`](docs/checklists/) | [`SEMESTER_PLAN.md`](docs/checklists/SEMESTER_PLAN.md)（2026-W42 起）· 当周 `YYYY-Www.md`（课表、CET-6、复盘） |
+| **跑代码** | [`weeks/`](weeks/README.md) · [`src/`](src/) | 按周练习（现 **`week01`**、`week02` 占位、`ai01`）；库 [`inverted_pendulum/`](src/inverted_pendulum/) · [`ai01/`](src/ai01/) |
 
 **路线图** [`docs/ROADMAP.md`](docs/ROADMAP.md) · **周日 20:30** 打开当周校历文件复盘。
 
-> **仓库进度（2026-10）**：Week 1 练习可用；`src/inverted_pendulum/` 为骨架；MuJoCo / LQR 实物 / RL **尚未实现**（见 ROADMAP）。
+> **仓库进度（2026-10）**：**Week 1** 练习可用；**Week 2** 目录占位（脚本待补）；`src/inverted_pendulum/` 为骨架；MuJoCo / LQR 实物 / RL **尚未实现**（见 ROADMAP）。
 
 ---
 
