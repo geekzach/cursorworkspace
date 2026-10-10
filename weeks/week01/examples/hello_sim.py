@@ -9,7 +9,7 @@ Week 1 预览：一阶系统阶跃响应（最简单的「仿真 + 画图」）
 - tau：时间常数（越大响应越慢）
 
 运行（在项目根目录）：
-    python weeks/week01/hello_sim.py
+    python weeks/week01/examples/hello_sim.py
 
 会弹出图形窗口；若无图形界面，脚本会把图保存为 week01_step_response.png。
 """

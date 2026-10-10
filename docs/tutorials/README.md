@@ -1,106 +1,54 @@
-# 总教程 · Python + 控制 + AI（两轮自平衡 / 倒立摆）
+# 总教程 · Python + 控制 + ML 阅读（两轮自平衡 / 倒立摆）
 
-**完整教程序列只在本目录**（`docs/tutorials/`）。  
-**本周打卡**（读哪几章、每日单词、每周听力固定槽）→ [`docs/checklists/`](../checklists/)（如 [`2026-W42.md`](../checklists/2026-W42.md)）。  
-**跑代码** → [`weeks/README.md`](../../weeks/README.md)（`week01/`、`week02/` 占位、`ai01/`）+ `src/`。
+**本目录 = 学习目标、知识要点、参考书目、项目挂钩提示**（不贴长教学代码）。  
+**跑代码** → [`weeks/README.md`](../../weeks/README.md)（每周：`examples/` → `exercises/` → `answers/`）。  
+**本周打卡** → [`docs/checklists/`](../checklists/)（文件名 **`YYYY-MM-DD.md`** = 该周周一）。
 
 ---
 
 ## 读者与前提
 
-西电机器人大三、Python 较弱、**VS Code + WSL**、可用 **conda 环境 `pendulum`**（等价步骤见 [T00 §0.3](T00-导读与环境.md#env-setup)）。目标：**东南大学 085400 专硕 / 具身智能**。
+西电机器人大三、Python 较弱、**VS Code + WSL**、conda/venv 均可。目标：**东南 085400 / 具身智能** 复试叙事。
 
 ---
 
 <a id="scope-rails"></a>
 
-## 参考与路线说明
+## 覆盖 / 不覆盖（本学期）
 
-本仓库走 **机器人 / 经典控制友好** 的 Python + ML 路径：**先能仿真与讲清模型，再谈学习**；工具从 **NumPy 手写小网络** 起步，不第一周就上 PyTorch / 强化学习 / Agent 框架。
-
-与外部自学的关系（建议并行阅读，不必全做完再动本仓库）：
-
-| 资源 | 用途 |
-|------|------|
-| [Arjun Virk · ML Bible（from-scratch 路线）](https://www.arjunvirk.com/writing/ml-guide) | 强调 **基础数学与经典 ML → 神经网络** 的顺序；本教程 AI 部分对齐其精神：**理解再写代码**，而非先堆 trendy 工具。你可把 Virk 书中「Classical ML / NN 数学」作课外加深；**不必**在本项目里学 Transformer、Vision、Agent 章节。 |
-| [Python 官方教程](https://docs.python.org/3/tutorial/) | T01 语法与模块习惯的对照 |
-| [NumPy Quickstart](https://numpy.org/doc/stable/user/quickstart.html) | T02 数组、广播、向量化（控制里状态就是向量） |
-| 教材 *Feedback Systems*（Åström & Murray，[免费在线版](https://fbsbook.org/)）或本校《自动控制原理》 | T03–T04 状态空间、反馈、PID/LQR 的体系化补充 |
-
-**控制 + 学习的技术顺序（本仓库强制节奏）**
-
-```text
-Python / NumPy（T01–T02）
-    → ODE 与仿真 rollout（T03）
-    → 经典控制直觉 PID / 状态空间（T04）+ inverted_pendulum 主线
-    → 监督学习最小集：划分数据、MSE、过拟合、train/val（T05 前半概念）
-    → 系统辨识 / 学习动力学：MLP 拟合一步 ẋ 或 x⁺（T05 + AI01）
-    → 寒假后：MuJoCo + LQR；再谈 RL 闭环（T06 / ROADMAP 阶段四，非 Week 1）
-```
-
-### 本教程覆盖 / 不覆盖
-
-| **覆盖**（校历周清单只应指向这些） | **不覆盖**（避免学半截走错方向） |
-|-----------------------------------|----------------------------------|
-| Python 3、科学计算绘图、项目目录与 conda/venv | 深度学习框架（PyTorch / TensorFlow / JAX） |
-| NumPy 向量/矩阵运算 **直觉**（为状态空间与 MLP 服务） | 完整考研线代课（仅教程内用到的 2–4 维状态） |
-| ODE、欧拉 / RK4 / `solve_ivp`、简化摆 rollout | 把 RL 当第一周入门；T06 仅为**选读概念** |
-| PID、框图、线性化与 \(A,B\) **入门** | 大模型、Transformer、RAG、Agent 工程 |
-| 监督学习：**训练/验证集、MSE、过拟合、隐藏层容量** | 端到端黑盒「直接出电机指令」跳过建模 |
-| AI01：**仿真生成标签 → NumPy MLP 拟合动力学**（系统 ID 思想） | MuJoCo 安装、PPO 训练实现（见 ROADMAP 寒假后） |
-| 与平衡车/倒立摆相关的复试叙事挂钩 | 替代本校自控/数学课的系统学习 |
-
-本周打卡 [`docs/checklists/`](../checklists/) 的 **「本周教程 ID」** 必须落在上表 **覆盖** 列；若本周忙，用 **T00–T02** 保底，**不要**为了「赶 AI」跳过 ODE 与经典控制主线。
+| **覆盖** | **不覆盖（寒假或更晚）** |
+|----------|---------------------------|
+| Python、NumPy、ODE、PID/状态空间入门 | PyTorch / JAX 主线 |
+| `src/inverted_pendulum/` 经典主线 | 本学期 **AI 训练代码**（见 T05 只读书） |
+| 李航《统计学习方法》按周阅读 | RL 实现、MuJoCo 安装（寒假） |
+| T06 概念选读 | Transformer、Agent 工程 |
 
 ---
 
-## 推荐阅读路径（章节 ID）
+## 章节 ID
 
-| ID | 章节 | 练习代码 |
-|----|------|----------|
-| **T00** | [导读与环境](T00-导读与环境.md) | [T00 §0.3](T00-导读与环境.md#env-setup) |
-| **T01** | [Python 语言基础](T01-Python语言基础.md)（含 §1.14 类与对象） | `weeks/week01/ex01`–`ex03` |
-| **T01b** | [类与对象入门加练](T01b-类与对象入门.md)（闭环 PID + 一阶 plant） | 自写 `my_pid_lab.py` |
-| **T02** | [NumPy 与 Matplotlib](T02-NumPy与Matplotlib.md) | `weeks/week01/hello_sim.py` |
-| **T03** | [常微分方程与仿真直觉](T03-常微分方程与仿真直觉.md) | `weeks/ai01/ex01_preview_rollout.py` |
-| **T04** | [控制预备：PID 与状态空间直觉](T04-控制预备-PID与状态空间直觉.md) | `src/inverted_pendulum/`（逐步实现） |
-| **T05** | [AI01：神经网络拟合动力学](T05-AI01-神经网络拟合动力学.md) | `weeks/ai01/ex02_fit_dynamics.py` |
-| **T06** | [选读：强化学习与 MuJoCo](T06-选读-强化学习与MuJoCo.md) | `sim/mujoco/`（寒假） |
+| ID | 章节 | 代码 |
+|----|------|------|
+| **T00** | [导读与环境](T00-导读与环境.md) | `week01/exercises/ex01` |
+| **T01** | [Python 语言基础](T01-Python语言基础.md) | `week01/exercises/` |
+| **T01b** | [类与对象入门](T01b-类与对象入门.md)（选做） | 自建 `my_pid_lab.py` |
+| **T02** | [NumPy 与 Matplotlib](T02-NumPy与Matplotlib.md) | `week01/examples/hello_sim.py` |
+| **T03** | [常微分方程与仿真直觉](T03-常微分方程与仿真直觉.md) | `week02/` |
+| **T04** | [控制预备：PID 与状态空间](T04-控制预备-PID与状态空间直觉.md) | `src/inverted_pendulum/` |
+| **T05** | [ML 阅读 + 寒假 AI01](T05-AI01-神经网络拟合动力学.md) | 本学期无；寒假 `weeks/ai01/` |
+| **T06** | [选读：RL 与 MuJoCo](T06-选读-强化学习与MuJoCo.md) | `sim/mujoco/` |
 
-- **Week 1 结业**：**T00–T02** + [`weeks/week01/CHECKLIST.md`](../../weeks/week01/CHECKLIST.md)（脚本自查，不重复教程正文）。  
-- **AI01 结业**（可选）：在 **T02 熟练、T03 rollout 已跑通** 后做 **T05**；禁止「Week 1 只追 RL/大模型」。清单见 [`weeks/ai01/CHECKLIST.md`](../../weeks/ai01/CHECKLIST.md)。  
-- **经典控制主线（后续周次）**：**T03 → T04**，配合 `src/inverted_pendulum/`；**T06** 仅在寒假前/复试准备作概念浏览。
-
-**精读+练习参考用时**（零基础讲义，含练习）：T00 约 0.5–1 d；**T01 5–8 d**；**T02 5–7 d**；T03 6–9 d；T04 7–10 d；T05 5–8 d（可选）；T06 选读。校历映射见 [`SEMESTER_PLAN.md`](../checklists/SEMESTER_PLAN.md)。
+校历与 **张宇 / 自控 / 李航** 每周范围：[`SEMESTER_PLAN.md`](../checklists/SEMESTER_PLAN.md) · 大纲对照 [`CURRICULUM.md`](../checklists/CURRICULUM.md)。
 
 ---
 
-## 与校历周清单的关系
+## 练习答案
 
-| 你想… | 打开 |
-|--------|------|
-| 学完整教程 | 本目录 T00 起按 ID 读 |
-| 本周读哪几章（如 **T00–T02**） | 当周 [`docs/checklists/YYYY-Www.md`](../checklists/) 顶部「本周教程」行 |
-| 学期周次总表（W42–W04） | [`docs/checklists/SEMESTER_PLAN.md`](../checklists/SEMESTER_PLAN.md) |
-| 大纲周次 ↔ 章节 ID 对照 | [`docs/checklists/CURRICULUM.md`](../checklists/CURRICULUM.md) |
-| 课表、**CET-6 每日单词**、**每周听力固定槽**、周日复盘 | 同上 ISO 周文件或 [`WEEKLY_TEMPLATE.md`](../checklists/WEEKLY_TEMPLATE.md) |
-
-**CET-6**：**单词** 每天 **20–30 min**（每日打卡）；**听力** 每周 **2–3 个固定槽**（与单词分开，写在当周文件顶部）。
-
----
-
-## 仓库分工
-
-仓库入口见根目录 [`README.md`](../../README.md)；练习脚本索引 [`weeks/README.md`](../../weeks/README.md)。
-
----
-
-## 练习与答案
-
-每章 **必做 / 选做** 在正文末尾。完整作业代码以 `weeks/` 为准；思路核对见 [`answers/`](answers/)（标注对应 **T** 章节）。
+思路核对在 **`weeks/<week>/answers/`**，不再在教程内嵌答案。  
+原 `docs/tutorials/answers/` 仅保留 [索引](answers/README.md) 指向各周目录。
 
 ---
 
 ## 相关文档
 
-- [`README.md`](../../README.md) · [`docs/ROADMAP.md`](../ROADMAP.md) · [`docs/checklists/`](../checklists/)
+[`README.md`](../../README.md) · [`ROADMAP.md`](../ROADMAP.md) · [`winter-ai.md`](../checklists/winter-ai.md)

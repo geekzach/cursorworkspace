@@ -1,13 +1,13 @@
-# 教程练习 · 参考思路
+# 教程练习 · 参考思路（已迁至 `weeks/`）
 
-本目录提供 **核对要点与思路**，不是 Week 作业的标准答案全文。请先独立完成 [`../`](../README.md) 各节必做练习，再对照。
+答案与核对要点按 **周目录** 存放，请先独立完成 `weeks/<week>/exercises/` 再对照。
 
-| 文件 | 对应教程 ID |
-|------|-------------|
-| [01_python_basics.md](01_python_basics.md) | **T01** Python 语言基础（含 **T01b** 闭环要点） |
-| [02_numpy_matplotlib.md](02_numpy_matplotlib.md) | **T02** NumPy 与 Matplotlib |
-| [03_ode_intuition.md](03_ode_intuition.md) | **T03** 常微分方程与仿真直觉 |
-| [05_pid_state_space.md](05_pid_state_space.md) | **T04** PID 与状态空间直觉 |
-| [04_nn_dynamics_fit.md](04_nn_dynamics_fit.md) | **T05** AI01 神经网络拟合动力学 |
+| 教程 ID | 路径 |
+|---------|------|
+| **T01 / T01b** | [`weeks/week01/answers/01_python_basics.md`](../../weeks/week01/answers/01_python_basics.md) |
+| **T02** | [`weeks/week01/answers/02_numpy_matplotlib.md`](../../weeks/week01/answers/02_numpy_matplotlib.md) |
+| **T03** | [`weeks/week02/answers/03_ode_intuition.md`](../../weeks/week02/answers/03_ode_intuition.md) |
+| **T04** | [`weeks/week03/answers/05_pid_state_space.md`](../../weeks/week03/answers/05_pid_state_space.md) |
+| **T05（寒假）** | [`weeks/ai01/answers/04_nn_dynamics_fit.md`](../../weeks/ai01/answers/04_nn_dynamics_fit.md) |
 
-**AI01 绘图与 print**：`ex02_fit_dynamics.py` 的 TODO 请自己写；`04` 的答案只描述「应看到什么」，避免与作业查重完全一致。
+教程正文：[`docs/tutorials/README.md`](../README.md)

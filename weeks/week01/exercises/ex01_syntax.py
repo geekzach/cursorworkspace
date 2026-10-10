@@ -3,7 +3,7 @@
 Week 1 练习 1：Python 语法入门
 
 运行方式（在项目根目录）：
-    python weeks/week01/ex01_syntax.py
+    python weeks/week01/exercises/ex01_syntax.py
 
 学习目标：变量、基本类型、条件与循环。
 """

@@ -6,7 +6,7 @@
 
 运行（项目根目录）：
     export PYTHONPATH="$(pwd)/src"
-    python weeks/ai01/demo_reference_end2end.py
+    python weeks/ai01/answers/demo_reference_end2end.py
 """
 
 from __future__ import annotations
@@ -14,7 +14,7 @@ from __future__ import annotations
 import os
 import sys
 
-_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
+_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
 _SRC = os.path.join(_ROOT, "src")
 if _SRC not in sys.path:
     sys.path.insert(0, _SRC)

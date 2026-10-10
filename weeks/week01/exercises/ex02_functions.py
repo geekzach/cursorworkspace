@@ -2,7 +2,7 @@
 """
 Week 1 练习 2：函数
 
-运行：python weeks/week01/ex02_functions.py
+运行：python weeks/week01/exercises/ex02_functions.py
 
 学习目标：定义函数、参数、返回值；为后续「控制器计算 u = f(error)」打基础。
 """
