@@ -81,9 +81,9 @@ Python / NumPy（T01–T02）
 | 学完整教程 | 本目录 T00 起按 ID 读 |
 | 本周读哪几章（如 **T00–T02**） | 当周 [`docs/checklists/YYYY-Www.md`](../checklists/) 顶部「本周教程」行 |
 | 大纲周次 ↔ 章节 ID 对照 | [`docs/checklists/CURRICULUM.md`](../checklists/CURRICULUM.md) |
-| 课表、**CET-6 每日单词**、周日复盘 | 同上 ISO 周文件或 [`WEEKLY_TEMPLATE.md`](../checklists/WEEKLY_TEMPLATE.md) |
+| 课表、**CET-6 每日单词**、**每周听力固定槽**、周日复盘 | 同上 ISO 周文件或 [`WEEKLY_TEMPLATE.md`](../checklists/WEEKLY_TEMPLATE.md) |
 
-**CET-6 · 单词**：每天 **20–30 min**，课多日也不攒到周末（模板与各周清单已留打卡位）。
+**CET-6**：**单词** 每天 **20–30 min**（每日打卡）；**听力** 每周 **2–3 个固定槽**（与单词分开，写在当周文件顶部）。
 
 ---
 
