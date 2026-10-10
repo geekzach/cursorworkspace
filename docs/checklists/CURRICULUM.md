@@ -10,6 +10,6 @@
 | Week 4 | **T03–T04** | `model.py` |
 | Week 5 | **T04** + LQR | `lqr.py`, `simulation.py` |
 | 本学期 ML | **T05**（李航，只读） | 无仓库代码 |
-| 寒假 | **T05 实践 + T06** | `weeks/ai01/`、`sim/mujoco/` |
+| 寒假 | **T05 实践 + T06** | [`winter-ai.md`](winter-ai.md) · `weeks/ai01/`、`sim/mujoco/` |
 
-边界：[`docs/tutorials/README.md`](../tutorials/README.md#scope-rails)
+边界：[`docs/tutorials/README.md`](../tutorials/README.md#scope-rails) · 寒假 AI 编码：[`winter-ai.md`](winter-ai.md)

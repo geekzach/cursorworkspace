@@ -61,7 +61,7 @@ def main() -> None:
     axes[1].grid(True, alpha=0.3)
 
     plt.tight_layout()
-    _save_or_show(fig, "ai01_rollout_preview.png")
+    _save_or_show(fig, "week02_rollout_preview.png")
 
 
 def _save_or_show(fig: plt.Figure, filename: str) -> None:
