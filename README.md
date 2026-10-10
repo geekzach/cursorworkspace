@@ -21,6 +21,8 @@
 
 更完整的分阶段里程碑、复试 PPT 结构与暂定硬件 BOM 见 **[`docs/ROADMAP.md`](docs/ROADMAP.md)**。
 
+**周学习节奏**：数学 / 自控 / CET-6 / 本仓库教程等见 [`docs/checklists/`](docs/checklists/)（当周例：[`2026-W41.md`](docs/checklists/2026-W41.md)）；**周日 20:30** 用该清单复盘。教程索引：[`docs/tutorials/README.md`](docs/tutorials/README.md)。
+
 ---
 
 ## 学习路线概览（按学期）
@@ -132,7 +134,9 @@ python weeks/ai01_nn_dynamics/demo_reference_end2end.py  # 参考答案演示
 .
 ├── README.md                 # 本文件
 ├── docs/
-│   └── ROADMAP.md            # 分阶段路线图、复试 PPT、暂定 BOM
+│   ├── ROADMAP.md            # 分阶段路线图、复试 PPT、暂定 BOM
+│   ├── checklists/           # 周学习清单（模板 + 当周实例）
+│   └── tutorials/            # 教程索引（指向 weeks/，不重复正文）
 ├── requirements.txt          # Python 依赖（固定版本）
 ├── sim/
 │   └── mujoco/               # 寒假 MuJoCo 占位（见目录内 README）
