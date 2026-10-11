@@ -1,10 +1,19 @@
 """
 仿真结果可视化（状态曲线、相平面、动画等）。
-
-后续将实现：
-- 与 matplotlib 绑定的标准绘图函数
-- 可选：小车–摆杆动画（Week 5+）
 """
+
+from __future__ import annotations
+
+import matplotlib.pyplot as plt
+
+
+def configure_matplotlib_chinese() -> None:
+    """
+    Windows 下中文轴标签不乱码；Linux/WSL 无微软雅黑时会回退到 SimHei 等。
+    绘图前调用一次即可。
+    """
+    plt.rcParams["font.sans-serif"] = ["Microsoft YaHei", "SimHei", "DejaVu Sans"]
+    plt.rcParams["axes.unicode_minus"] = False
 
 
 def placeholder_plotting_doc() -> None:

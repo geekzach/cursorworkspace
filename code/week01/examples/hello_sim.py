@@ -18,8 +18,16 @@ from __future__ import annotations
 
 import os
 
+import sys
+from pathlib import Path
+
 import numpy as np
 import matplotlib.pyplot as plt
+
+_code_root = Path(__file__).resolve().parents[2]
+if str(_code_root) not in sys.path:
+    sys.path.insert(0, str(_code_root))
+from inverted_pendulum.plotting import configure_matplotlib_chinese
 
 
 def first_order_step_response(
@@ -45,6 +53,7 @@ def main() -> None:
     y = first_order_step_response(t, K=K, tau=tau)
 
     # ----- 绘图 -----
+    configure_matplotlib_chinese()
     plt.figure(figsize=(8, 4.5))
     plt.plot(t, y, color="#1f77b4", linewidth=2, label=rf"$y(t)$, $\tau$={tau}s")
     plt.axhline(K, color="gray", linestyle="--", linewidth=1, label=f"稳态值 K={K}")

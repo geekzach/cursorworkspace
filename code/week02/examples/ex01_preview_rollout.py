@@ -9,9 +9,16 @@ Week 2 示例：用简化摆 ODE 生成一条 rollout 并画图（不依赖其�
 from __future__ import annotations
 
 import os
+import sys
+from pathlib import Path
 
 import matplotlib.pyplot as plt
 import numpy as np
+
+_code_root = Path(__file__).resolve().parents[2]
+if str(_code_root) not in sys.path:
+    sys.path.insert(0, str(_code_root))
+from inverted_pendulum.plotting import configure_matplotlib_chinese
 
 
 class PendulumParams:
@@ -54,6 +61,7 @@ def main() -> None:
         thetas[k + 1] = state[0]
         omegas[k + 1] = state[1]
 
+    configure_matplotlib_chinese()
     fig, axes = plt.subplots(2, 1, figsize=(8, 5), sharex=True)
     axes[0].plot(times, thetas, color="#1f77b4", lw=2)
     axes[0].set_ylabel("摆角 θ (rad)")
