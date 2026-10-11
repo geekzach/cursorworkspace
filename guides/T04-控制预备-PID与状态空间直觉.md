@@ -11,7 +11,8 @@
 | 资源 | 范围 |
 |------|------|
 | [Feedback Systems](https://fbsbook.org/) | Ch 7 PID、Ch 8 状态反馈（选节） |
-| 胡寿松《自动控制原理》 | 跟课 + 按 SEMESTER_PLAN「自控」列复习 |
+| 田玉平《自动控制原理》（第 2 版） | 按 SEMESTER_PLAN「田玉平 · 835/5c5」列复习（考研主轴） |
+| 胡寿松《自动控制原理》 | **课内对照**：作业、期末，与田玉平章节对照记 3 条差异即可 |
 | [python-control](https://python-control.readthedocs.io/) | 选做：`step_response` 对照直觉 |
 
 ## 与项目

@@ -4,7 +4,7 @@
 
 ## 学什么
 
-`ndarray`、切片、`linspace`、向量化运算、简单 `plot`/`savefig`（无 GUI 时保存 PNG）。
+`ndarray`、切片、`linspace`、向量化运算、简单 `plot`/`savefig`（无 GUI 时保存 PNG）。中文轴标签在 Windows 上先调 `inverted_pendulum.plotting.configure_matplotlib_chinese()`（`hello_sim` 已示范）。
 
 ## 推荐资源
 
