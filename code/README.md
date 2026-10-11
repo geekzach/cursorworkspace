@@ -16,8 +16,10 @@
 
 ## 环境（Windows + conda）
 
+需要 Python 3.12 环境，第一次创建见 [T00](../guides/T00-导读与环境.md)。
+
 ```powershell
-conda activate <你的环境名>
+conda activate inverted-pendulum
 pip install -U pip && pip install -r requirements.txt
 $env:PYTHONPATH = "$PWD\code"
 python code/week01/exercises/ex01_syntax.py
