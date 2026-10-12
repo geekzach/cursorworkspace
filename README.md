@@ -1,6 +1,6 @@
 # 两轮自平衡小车 · 学习仓库（精简版）
 
-- **[学期计划与周打卡](plan/SEMESTER_PLAN.md)**：`SEMESTER_PLAN.md` 总览（**张宇数学一 + 田玉平 835**，到寒假结束）；当周打开 `plan/YYYY-MM-DD.md`（周一日期）。
+- **[学期计划与周打卡](plan/SEMESTER_PLAN.md)**：`SEMESTER_PLAN.md` 总览（**张宇基础 30 讲高数 + 田玉平 835**，到寒假结束）；当周打开 `plan/YYYY-MM-DD.md`（周一日期）。
   - [报考备忘](plan/SEU_备忘.md)：章节与考试对应、官方复试线、目标分
   - [学习方法](plan/学习方法.md)：按课表的每日时段、落后了怎么办
   - [长期计划](plan/长期计划.md)：大三下到初试

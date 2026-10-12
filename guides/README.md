@@ -12,6 +12,6 @@
 | T03 | [常微分方程与仿真直觉](T03-常微分方程与仿真直觉.md) | `code/week02/` |
 | T04 | [控制预备：PID 与状态空间](T04-控制预备-PID与状态空间直觉.md) | `code/inverted_pendulum/` |
 
-张宇 · 数学一 / 田玉平 · 835/5c5 **每周范围** 以 [`plan/SEMESTER_PLAN.md`](../plan/SEMESTER_PLAN.md) 为准。
+张宇 · 基础 30 讲高数 / 田玉平 · 835/5c5 **每周范围** 以 [`plan/SEMESTER_PLAN.md`](../plan/SEMESTER_PLAN.md) 为准。
 
 **初试后再说**：MuJoCo、强化学习、李航《统计学习方法》周读等（不占本学期计划）。
