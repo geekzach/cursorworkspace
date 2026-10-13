@@ -11,6 +11,7 @@
 | `week02/examples/` | ODE + RK4 预习 `ex01_preview_rollout.py` |
 | `week02/` | 自建 `msd_ode.py` 等（按 [T03](../guides/T03-常微分方程与仿真直觉.md)） |
 | `inverted_pendulum/` | 倒立摆包骨架（`model` / `simulation` / `controllers` / `plotting`），由你逐步实现 |
+| `matlab/` | 机器人课 MATLAB 补充 M00–M02（见 [guides/matlab](../guides/matlab/README.md)） |
 
 面试用响应图可放入 [`docs/figures/`](../docs/figures/)。
 

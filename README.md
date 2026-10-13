@@ -7,3 +7,4 @@
   - [复试与项目](plan/复试与项目.md)：5c5 复试笔试、平衡车项目全程、面试
 - **[周学习导引](guides/README.md)**：学什么、读哪本书/哪一节、外链资源（T00–T04，无答案、无长代码）。
 - **[你的代码区](code/README.md)**：自学后把练习与项目放进 `code/`；仓库只保留少量示例与倒立摆包骨架。面试用图放 [`docs/figures/`](docs/figures/)。
+- **[机器人课 · MATLAB 补充](guides/matlab/README.md)**：M00–M02（脚本、矩阵、Robotics Toolbox、坐标系练习），与 T00–T04 周导引分开。

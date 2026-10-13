@@ -15,3 +15,5 @@
 张宇 · 基础 30 讲高数 / 田玉平 · 835/5c5 **每周范围** 以 [`plan/SEMESTER_PLAN.md`](../plan/SEMESTER_PLAN.md) 为准。
 
 **初试后再说**：MuJoCo、强化学习、李航《统计学习方法》周读等（不占本学期计划）。
+
+**课堂补充（机器人技术课）**：[MATLAB M00–M02](matlab/README.md) · 脚本在 [`code/matlab/`](../code/matlab/)。
