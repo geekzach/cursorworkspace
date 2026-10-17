@@ -24,6 +24,17 @@ htmlcov/
 # Jupyter
 .ipynb_checkpoints/
 
+# MATLAB
+*.asv
+*.m~
+*.autosave
+*.slxc
+*.mex*
+slprj/
+codegen/
+*.mlappinstall
+*.mlproj
+
 # IDE / editors
 .idea/
 .vscode/
@@ -34,13 +45,6 @@ htmlcov/
 # OS
 .DS_Store
 Thumbs.db
-
-# Project outputs (keep interview plots under docs/figures/)
-*.png
-!docs/figures/
-!docs/figures/**
-/figures/
-output/
 
 # Local env files
 .env
